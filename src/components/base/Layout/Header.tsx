@@ -1,6 +1,6 @@
-import { NavBar } from "@/components/base/Layout/NavBar/NavBar";
-import { Logo } from "@/components/base/Logo/Logo";
-import Image from "next/image";
+import { NavBar } from '@/components/base/Layout/NavBar/NavBar'
+import { Logo } from '@/components/base/Logo/Logo'
+import Image from 'next/image'
 
 const Header = () => (
   <>
@@ -13,11 +13,15 @@ const Header = () => (
           <div>Hotline: (6221) - 5662013</div>
         </div>
       </div>
-      <div className="py-2 px-2 sm:px-8 border bg-primary-blue">
-        <NavBar />
+      <div className="py-2 px-2 sm:px-8 border bg-primary-blue hidden md:block">
+        <NavBar mode="Desktop" />
+      </div>
+
+      <div className="py-2 px-2 sm:px-8 border bg-primary-blue block md:hidden">
+        <NavBar mode="Mobile" />
       </div>
     </header>
   </>
-);
+)
 
-export default Header;
+export default Header

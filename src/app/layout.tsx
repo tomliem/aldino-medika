@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const agent = (children as any)?.props?.childProp?.segment;
+  const agent = (children as any)?.props?.childProp?.segment
   return (
     <html lang="en">
       <head>
@@ -24,9 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="text-blue-site bg-white">
         <Header />
         <main className="bg-white min-h-[600px]">{children}</main>
-        <div className="mt-10 sm:mt-20">
-          <Footer agent={agent === '__PAGE__' ? 'ratina' : agent} />
-        </div>
+
+        <div className="py-5 px-2 sm:px-8 border bg-primary-blue mt-8"></div>
       </body>
     </html>
   )

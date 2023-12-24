@@ -3,13 +3,9 @@ import { NavLink } from './NavLink'
 import { useCallback, useState } from 'react'
 import type { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
-
-const navbarItems = [
-  { ref: '/#about-us', label: 'About Us' },
-  { ref: '/#insight', label: 'Insight' },
-  { ref: '/#services', label: 'Our Services' },
-  { ref: '/#client', label: 'Our Client' },
-]
+import { Box, Drawer, IconButton, List, ListItem } from '@mui/material'
+import { IoMenu } from "react-icons/io5";
+import { navbarItems } from '@/constants/menus'
 
 const StyledNavLink = ({
   isActive,
@@ -19,19 +15,11 @@ const StyledNavLink = ({
   isActive: boolean
   children: React.ReactNode
   className?: string
-}) => (
-  <NavLink
-    className={`${className ?? ''} ${isActive ? 'text-primary-dark-yellow' : ''}`}
-    {...linkProps}
-  />
-)
+}) => <NavLink className={`${className ?? ''} ${isActive ? 'text-primary-dark-yellow' : ''}`} {...linkProps} />
 
-export function NavBar() {
-  const [isMenuShown, setIsMenuShown] = useState(false)
+function DesktopNavBar() {
   const pathname = usePathname()
-  console.log(pathname)
   const [linkRef, setLinkRef] = useState<LinkProps['href']>(pathname!)
-  const toggleOpen = useCallback(() => setIsMenuShown(!isMenuShown), [isMenuShown])
   return (
     <>
       <nav
@@ -49,16 +37,72 @@ export function NavBar() {
                   const element = document.getElementById(id[1])
                   if (element) element.scrollIntoView({ behavior: 'smooth' })
                   setLinkRef(ref)
-                  setIsMenuShown(false)
                 }}
               >
                 {label}
               </StyledNavLink>
-              <span className="absolute -bottom-5 md:hidden border-b-2 w-48 left-[calc(50%_-_theme(space.24))]" />
             </li>
           ))}
         </ul>
       </nav>
     </>
   )
+}
+
+const MobileNavBar = () => {
+  const pathname = usePathname()
+  const [linkRef, setLinkRef] = useState<LinkProps['href']>(pathname!)
+  const [state, setState] = useState(false)
+
+  const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return
+    }
+
+    setState(open)
+  }
+
+  const list = () => (
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+      <List>
+        {navbarItems.map(({ ref, label }) => (
+          <ListItem key={label}>
+            <StyledNavLink
+              isActive={ref === linkRef}
+              href={`${pathname}${ref}`}
+              onClick={() => {
+                const id = ref.split('#')
+
+                const element = document.getElementById(id[1])
+                if (element) element.scrollIntoView({ behavior: 'smooth' })
+                setLinkRef(ref)
+              }}
+            >
+              {label}
+            </StyledNavLink>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  )
+  const handleOpen = () => setState(true)
+  return (
+    <>
+      <IconButton onClick={handleOpen}>
+        <IoMenu className="text-white"  />
+      </IconButton>
+      <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
+        {list()}
+      </Drawer>
+    </>
+  )
+}
+export const NavBar = ({ mode }: { mode: 'Desktop' | 'Mobile' }) => {
+  if (mode === 'Desktop') return <DesktopNavBar />
+
+  return <MobileNavBar />
 }
