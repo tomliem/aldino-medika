@@ -17,6 +17,7 @@ module.exports = {
         "primary-red": "#de2a32",
         "primary-yellow": "#d4ad3c",
         "primary-dark-yellow": "#CBA135",
+        "primary-gray": "#7A7777",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -75,7 +76,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        'about-us': 'url(/about-us.jpg)',
+        'about-us': 'url(/about-us2.jpeg)',
       },
     },
   },

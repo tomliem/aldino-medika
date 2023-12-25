@@ -25,7 +25,7 @@ function DesktopNavBar() {
       <nav
         className={`transition-all duration-500 ease-in-out md:block overflow-hidden  max-md:animate-sideways-once `}
       >
-        <ul className="flex items-center flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-12 justify-center text-sm md:text-[15px] leading-[22px]">
+        <ul className="flex items-center flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-12 justify-start text-sm md:text-[15px] leading-[22px]">
           {navbarItems.map(({ ref, label }) => (
             <li key={ref} className="relative text-base font-semibold font-header">
               <StyledNavLink
