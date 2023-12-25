@@ -12,7 +12,7 @@ export const Section2 = () => {
         <div className="absolute top-0 h-[490px] right-0 w-11/12 md:w-3/4 overflow-hidden ">
           <div className="bg-about-us w-full h-full transform scale-100 group-hover:scale-125 duration-700 transition-all bg-contain group-hover:bg-right"></div>
         </div>
-        <div className="py-6 bg-primary-blue group-hover:bg-opacity-90 duration-1000 transition-all z-50 relative w-10/12  md:w-3/5 rounded-md bg-opacity-80 mx-4 my-8 px-6">
+        <div className="py-6 bg-primary-blue group-hover:bg-opacity-100 duration-1000 transition-all z-50 relative w-10/12  md:w-3/5 rounded-md bg-opacity-90 md:bg-opacity-80 mx-0 md:mx-8 my-8 px-6">
           <p className="text-lg md:text-2xl font-bold text-white">Aldino Freight and trading PTE.LTD </p>
           <p className="mt-4 text-white text-sm md:text-xl">
             is one of Singapore's leading international Freight Forwarders and{' '}
