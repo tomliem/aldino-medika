@@ -1,9 +1,9 @@
 import Image from "next/image";
-import MainBanner from "@statics/banner-utama.jpg";
+import MainBanner from "@statics/banner-utama1.jpeg";
 
 export const Section1 = () => {
   return (
-    <div id="home">
+    <div id="home" className="max-h-96 relative w-full overflow-hidden flex items-center">
       <Image src={MainBanner} alt="Banner Utama" className="w-full" />
     </div>
   );
