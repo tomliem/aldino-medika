@@ -58,8 +58,8 @@ export const Section4 = () => {
   return (
     <div id={menuKey[2]} className="w-full mt-8 px-4 items-center flex flex-col">
       <h1 className="text-center text-3xl text-primary-yellow font-bold">Our Services</h1>
-      <p className="px-2 text-justify md:px-8 mt-2">
-        At Aldino Freight and Traiding, we offer a comprehensive suite of services designed to optimize supply chain
+      <p className="px-2 text-center md:px-8 mt-2">
+        At Aldino Freight and Trading, we offer a comprehensive suite of services designed to optimize supply chain
         logistics, minimize costs, and ensure the timely and secure delivery of goods worldwide. With our expertise in
         freight and trading, we facilitate seamless trade and transportation solutions for our valued clients.
       </p>

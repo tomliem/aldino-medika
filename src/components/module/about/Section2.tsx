@@ -9,10 +9,10 @@ export const Section2 = () => {
       <h1 className="text-center text-4xl text-primary-yellow font-bold mt-2">Your Best Partner in Transportation</h1>
       <div className="bg-primary-red h-2 w-14 mt-4"></div>
       <div className="mt-8 w-full max-w-7xl relative flex items-center group">
-        <div className="absolute top-0 h-[490px] right-0 w-11/12 md:w-3/4 overflow-hidden ">
+        <div className="absolute top-0 h-[550px] right-0 w-11/12 md:w-3/4 overflow-hidden ">
           <div className="bg-about-us w-full h-full transform scale-100 group-hover:scale-125 duration-700 transition-all bg-cover group-hover:bg-right"></div>
         </div>
-        <div className="py-6 bg-primary-dark group-hover:bg-opacity-100 duration-1000 transition-all z-50 relative w-10/12  md:w-3/5 rounded-md bg-opacity-70 md:bg-opacity-80 mx-0 md:mx-8 my-8 px-6">
+        <div className="py-7 bg-primary-dark group-hover:bg-opacity-100 duration-1000 transition-all z-50 relative w-10/12  md:w-4/5 rounded-md bg-opacity-70 md:bg-opacity-80 mx-0 md:mx-8 mt-12 mb-4 px-6">
           <p className="text-lg md:text-2xl font-bold text-white">Aldino Freight and trading PTE.LTD </p>
           <p className="mt-4 text-white text-sm md:text-xl">
             is one of Singapore's leading international Freight Forwarders and{' '}
@@ -34,7 +34,7 @@ export const Section2 = () => {
           </p>
         </div>
       </div>
-      <div className="mt-8 max-w-7xl w-full overflow-hidden">
+      <div className="mt-6 md:mt-20 max-w-7xl w-full overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
           <div className="bg-opacity-50 py-8 px-8 vision-card">
             <div className="bg-overlay"></div>
