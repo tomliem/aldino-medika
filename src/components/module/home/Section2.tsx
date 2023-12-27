@@ -1,57 +1,178 @@
+'use client'
+import { alpha, styled } from '@mui/material/styles'
+import { Button, Checkbox, FormLabel, InputLabel, TextField, Typography } from '@mui/material'
+import { useFormik } from 'formik'
 import Image from 'next/image'
-import MainBanner from '@statics/banner-utama.jpg'
-import { menuKey } from '@/constants/menus'
+import clsx from 'clsx'
 
-export const Section2 = () => {
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    //   color: '#D4AD3C',
+    fontWeight: '600',
+  },
+})
+const types = [
+  { value: 'air', label: 'Air' },
+  { value: 'sea', label: 'Sea' },
+]
+const Section2 = () => {
+  const { values, handleSubmit, handleChange, setFieldValue } = useFormik({
+    initialValues: {
+      source: '',
+      destination: '',
+      goods: '',
+      shippingMethod: '',
+      fullname: '',
+      email: '',
+    },
+    onSubmit: (data) => {
+      console.log(data)
+    },
+  })
+
+  const handleChangeCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target
+    if (checked) setFieldValue('shippingMethod', value)
+    else setFieldValue('shippingMethod', '')
+  }
   return (
-    <div id={menuKey[0]} className="w-full mt-8 px-4 items-center flex flex-col">
-      <h6 className="text-primary-gray text-base text-center">About Us</h6>
-      <h1 className="text-center text-4xl text-primary-yellow font-bold mt-2">Your Best Partner in Transportation</h1>
-      <div className="bg-primary-red h-2 w-14 mt-4"></div>
-      <div className="mt-8 w-full max-w-7xl relative flex items-center group">
-        <div className="absolute top-0 h-[490px] right-0 w-11/12 md:w-3/4 overflow-hidden ">
-          <div className="bg-about-us w-full h-full transform scale-100 group-hover:scale-125 duration-700 transition-all bg-contain group-hover:bg-right"></div>
-        </div>
-        <div className="py-6 bg-primary-blue group-hover:bg-opacity-100 duration-1000 transition-all z-50 relative w-10/12  md:w-3/5 rounded-md bg-opacity-90 md:bg-opacity-80 mx-0 md:mx-8 my-8 px-6">
-          <p className="text-lg md:text-2xl font-bold text-white">Aldino Freight and trading PTE.LTD </p>
-          <p className="mt-4 text-white text-sm md:text-xl">
-            is one of Singapore's leading international Freight Forwarders and{' '}
-            <span className="italic">door to door services</span> from around the world.
-          </p>
-          <p className="mt-4  text-white text-sm md:text-xl">
-            Established in 1995, our company is managed and developed by our experienced professional teams and agents
-            from across the globe to be the best transportation partner, providing our valueable customers a trustworthy
-            experience in building their companies with us.
-          </p>
-          <p className="mt-4 text-white text-sm md:text-xl">
-            Our company specializes in handling projects and door to door services to Indonesia via Singapore port. We
-            are providing full assistance international shippers in providing import documentation, export
-            documentation, freight consolidation, and foreign freight forwarding.
-          </p>
-          <p className="text-white text-sm md:text-xl mt-4">
-            Singapore as our headquarter enables us to maintain a high quality in efficiency, speed, and accuracy in
-            time arrival of your shipments with us.
-          </p>
-        </div>
-      </div>
-      <div className="mt-8 max-w-7xl w-full overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-          <div className="bg-opacity-50 py-8 px-8 vision-card">
-            <div className="bg-overlay"></div>
-            <h2 className="text-left text-4xl font-bold">Vision</h2>
-            <p className="mt-4 text-justify pr-24">Providing forwarding facilities from multinational companies from around the world.</p>
+    <div id="home" className="relative w-full overflow-hidden flex items-center">
+      <div className="bg-slate-200 rounded-md p-6 mx-auto mt-12 w-full md:w-6/12">
+        <form onSubmit={handleSubmit} className="">
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel htmlFor="source" className="text-primary-blue font-bold">
+              From
+            </InputLabel>
+            <CssTextField
+              id="source"
+              label=""
+              placeholder="Origin City?"
+              InputProps={{
+                className: 'rounded-full',
+                autoComplete: 'off',
+              }}
+              name="source"
+              className="bg-white rounded-full"
+              onChange={handleChange}
+              variant="outlined"
+              size="small"
+            />
           </div>
-          <div className="bg-opacity-50 py-8 px-4 mission-card">
-            <div className="bg-overlay"></div>
-            <h2 className="text-left text-4xl pl-24 font-bold">Mission</h2>
-            <p className="mt-4 text-justify pl-24">
-              Providing premium services with the most efficient cost to our customers. Making customer satisfaction as
-              our top priority. Becoming the most reliable company as a business development partner in logistic
-              section.
-            </p>
+
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel htmlFor="destination" className="text-primary-blue font-bold">
+              To
+            </InputLabel>
+            <CssTextField
+              id="destination"
+              label=""
+              InputProps={{
+                className: 'rounded-full',
+                autoComplete: 'off',
+              }}
+              placeholder="Destination City?"
+              name="destination"
+              className="bg-white rounded-full"
+              onChange={handleChange}
+              variant="outlined"
+              size="small"
+            />
           </div>
-        </div>
+
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel htmlFor="goods" className="text-primary-blue font-bold">
+              Goods
+            </InputLabel>
+            <CssTextField
+              id="goods"
+              label=""
+              InputProps={{
+                className: 'rounded-full',
+                autoComplete: 'off',
+              }}
+              name="goods"
+              placeholder="Lemari / Sepeda"
+              className="bg-white rounded-full"
+              onChange={handleChange}
+              variant="outlined"
+              size="small"
+            />
+          </div>
+
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel className="text-primary-blue font-bold">Shipping Method</InputLabel>
+            <div className="flex flex-row space-x-2">
+              {types.map((item) => {
+                return (
+                  <InputLabel
+                    key={item.value}
+                    htmlFor={item.value}
+                    className={clsx('flex space-x-2 items-center pr-6 pl-3 rounded-full border-2 border-primary-blue', {
+                      [' bg-primary-blue text-white']: values.shippingMethod === item.value,
+                    })}
+                  >
+                    <Checkbox
+                      id={item.value}
+                      onChange={handleChangeCheckbox}
+                      value={item.value}
+                      checked={values.shippingMethod === item.value}
+                      size="small"
+                    />
+                    <span className="">{item.label}</span>
+                  </InputLabel>
+                )
+              })}
+            </div>
+          </div>
+
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel htmlFor="customerName" className="text-primary-blue font-bold">
+              Name
+            </InputLabel>
+            <CssTextField
+              id="customerName"
+              label=""
+              placeholder="Enter your name"
+              InputProps={{
+                className: 'rounded-full',
+                autoComplete: 'off',
+              }}
+              name="customerName"
+              className="bg-white rounded-full"
+              onChange={handleChange}
+              variant="outlined"
+              size="small"
+            />
+          </div>
+
+          <div className="flex flex-col space-y-2 mb-4">
+            <InputLabel htmlFor="email" className="text-primary-blue font-bold">
+              Business Email
+            </InputLabel>
+            <CssTextField
+              id="email"
+              label=""
+              placeholder="Enter your email address"
+              InputProps={{
+                className: 'rounded-full',
+                autoComplete: 'off',
+              }}
+              name="email"
+              className="bg-white rounded-full"
+              onChange={handleChange}
+              variant="outlined"
+              size="small"
+            />
+          </div>
+
+          <div className="flex justify-center">
+            <Button type="submit" variant="contained" className="bg-primary-blue">
+              Submit
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   )
 }
+export default Section2

@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react'
 import type { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Box, Drawer, IconButton, List, ListItem } from '@mui/material'
-import { IoMenu } from "react-icons/io5";
+import { IoMenu } from 'react-icons/io5'
 import { navbarItems } from '@/constants/menus'
 
 const StyledNavLink = ({
@@ -26,23 +26,26 @@ function DesktopNavBar() {
         className={`transition-all duration-500 ease-in-out md:block overflow-hidden  max-md:animate-sideways-once `}
       >
         <ul className="flex items-center flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-12 justify-start text-sm md:text-[15px] leading-[22px]">
-          {navbarItems.map(({ ref, label }) => (
-            <li key={ref} className="relative text-base font-semibold font-header">
-              <StyledNavLink
-                isActive={ref === linkRef}
-                href={`${pathname}${ref}`}
-                onClick={() => {
-                  const id = ref.split('#')
-
-                  const element = document.getElementById(id[1])
-                  if (element) element.scrollIntoView({ behavior: 'smooth' })
-                  setLinkRef(ref)
-                }}
-              >
-                {label}
-              </StyledNavLink>
-            </li>
-          ))}
+          {navbarItems.map(({ ref, label }) => {
+            const id = ref.split('#')
+            const isNewPage = id.length < 2;
+            return (
+              <li key={ref} className="relative text-base font-semibold font-header">
+                <StyledNavLink
+                  isActive={ref === linkRef}
+                  href={`${isNewPage ? '' : pathname}${ref}`}
+                  onClick={() => {
+                    if (isNewPage) return
+                    const element = document.getElementById(id[1])
+                    if (element) element.scrollIntoView({ behavior: 'smooth' })
+                    setLinkRef(ref)
+                  }}
+                >
+                  {label}
+                </StyledNavLink>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </>
@@ -93,7 +96,7 @@ const MobileNavBar = () => {
   return (
     <>
       <IconButton onClick={handleOpen}>
-        <IoMenu className="text-white"  />
+        <IoMenu className="text-white" />
       </IconButton>
       <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
         {list()}

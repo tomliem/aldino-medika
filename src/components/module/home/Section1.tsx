@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MainBanner from "@statics/banner-utama1.jpeg";
+import MainBanner from "@statics/banner-utama1.jpg";
 
 export const Section1 = () => {
   return (

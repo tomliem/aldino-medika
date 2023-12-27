@@ -24,8 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="text-blue-site bg-white">
         <Header />
         <main className="bg-white min-h-[600px]">{children}</main>
-
-        <div className="py-5 px-2 sm:px-8 border bg-primary-blue mt-8"></div>
+        <Footer />
       </body>
     </html>
   )

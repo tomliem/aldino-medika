@@ -18,6 +18,7 @@ module.exports = {
         "primary-yellow": "#d4ad3c",
         "primary-dark-yellow": "#CBA135",
         "primary-gray": "#7A7777",
+        "primary-dark": '#222121',
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
