@@ -21,6 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>Aldino FnT</title>
         <meta name="description" content="Freight Forwarder" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className="text-blue-site bg-white">
         <Header />

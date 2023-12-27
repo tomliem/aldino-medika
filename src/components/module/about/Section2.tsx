@@ -10,7 +10,7 @@ export const Section2 = () => {
       <div className="bg-primary-red h-2 w-14 mt-4"></div>
       <div className="mt-8 w-full max-w-7xl relative flex items-center group">
         <div className="absolute top-0 h-[490px] right-0 w-11/12 md:w-3/4 overflow-hidden ">
-          <div className="bg-about-us w-full h-full transform scale-100 group-hover:scale-125 duration-700 transition-all bg-contain group-hover:bg-right"></div>
+          <div className="bg-about-us w-full h-full transform scale-100 group-hover:scale-125 duration-700 transition-all bg-cover group-hover:bg-right"></div>
         </div>
         <div className="py-6 bg-primary-dark group-hover:bg-opacity-100 duration-1000 transition-all z-50 relative w-10/12  md:w-3/5 rounded-md bg-opacity-70 md:bg-opacity-80 mx-0 md:mx-8 my-8 px-6">
           <p className="text-lg md:text-2xl font-bold text-white">Aldino Freight and trading PTE.LTD </p>
