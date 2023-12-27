@@ -28,7 +28,7 @@ function DesktopNavBar() {
         <ul className="flex items-center flex-row gap-10 md:gap-4 min-[900px]:gap-5 lg:gap-12 justify-start text-sm md:text-[15px] leading-[22px]">
           {navbarItems.map(({ ref, label }) => {
             const id = ref.split('#')
-            const isNewPage = id.length < 2;
+            const isNewPage = id.length < 2
             return (
               <li key={ref} className="relative text-base font-semibold font-header">
                 <StyledNavLink
@@ -72,23 +72,26 @@ const MobileNavBar = () => {
   const list = () => (
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <List>
-        {navbarItems.map(({ ref, label }) => (
-          <ListItem key={label}>
-            <StyledNavLink
-              isActive={ref === linkRef}
-              href={`${pathname}${ref}`}
-              onClick={() => {
-                const id = ref.split('#')
-
-                const element = document.getElementById(id[1])
-                if (element) element.scrollIntoView({ behavior: 'smooth' })
-                setLinkRef(ref)
-              }}
-            >
-              {label}
-            </StyledNavLink>
-          </ListItem>
-        ))}
+        {navbarItems.map(({ ref, label }) => {
+          const id = ref.split('#')
+          const isNewPage = id.length < 2
+          return (
+            <ListItem key={label}>
+              <StyledNavLink
+                isActive={ref === linkRef}
+                href={`${pathname}${ref}`}
+                onClick={() => {
+                  if (isNewPage) return
+                  const element = document.getElementById(id[1])
+                  if (element) element.scrollIntoView({ behavior: 'smooth' })
+                  setLinkRef(ref)
+                }}
+              >
+                {label}
+              </StyledNavLink>
+            </ListItem>
+          )
+        })}
       </List>
     </Box>
   )
@@ -98,9 +101,14 @@ const MobileNavBar = () => {
       <IconButton onClick={handleOpen}>
         <IoMenu className="text-white" />
       </IconButton>
-      <Drawer anchor="left" open={state} onClose={toggleDrawer(false)} PaperProps={{
-        className: "bg-primary-blue font-semibold"
-      }}>
+      <Drawer
+        anchor="left"
+        open={state}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          className: 'bg-primary-blue font-semibold',
+        }}
+      >
         {list()}
       </Drawer>
     </>
