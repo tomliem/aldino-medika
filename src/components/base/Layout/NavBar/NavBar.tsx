@@ -79,7 +79,7 @@ const MobileNavBar = () => {
             <ListItem key={label}>
               <StyledNavLink
                 isActive={ref === linkRef}
-                href={`${pathname}${ref}`}
+                href={`${isNewPage ? '' : pathname}${ref}`}
                 onClick={() => {
                   if (isNewPage) return
                   const element = document.getElementById(id[1])
