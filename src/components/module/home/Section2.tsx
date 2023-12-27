@@ -52,7 +52,7 @@ const Section2 = () => {
         <div className="text-white text-xl font-semibold">Quick Quote</div>
         <p className="mb-8 text-white">We will contact you and arrange your shipment goods</p>
         <form onSubmit={handleSubmit} className="">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-1">
               <div className="flex flex-col space-y-2 mb-4">
                 <InputLabel htmlFor="source" className="text-white font-bold">
@@ -144,7 +144,7 @@ const Section2 = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-1">
               <div className="flex flex-col space-y-2 mb-4">
                 <InputLabel htmlFor="customerName" className="text-white font-bold">
