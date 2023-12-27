@@ -1,8 +1,8 @@
 'use client'
-import { alpha, styled } from '@mui/material/styles'
-import { Button, Checkbox, FormLabel, InputLabel, TextField, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { Button, Checkbox, InputLabel, TextField } from '@mui/material'
 import { useFormik } from 'formik'
-import Image from 'next/image'
+import { toast } from 'react-toastify'
 import clsx from 'clsx'
 
 const CssTextField = styled(TextField)({
@@ -16,16 +16,27 @@ const types = [
   { value: 'sea', label: 'Sea' },
 ]
 const Section2 = () => {
-  const { values, handleSubmit, handleChange, setFieldValue } = useFormik({
+  const { values, handleSubmit, handleChange, setFieldValue, resetForm } = useFormik({
     initialValues: {
       source: '',
       destination: '',
       goods: '',
       shippingMethod: '',
-      fullname: '',
+      customerName: '',
       email: '',
     },
-    onSubmit: (data) => {
+    onSubmit: async (data) => {
+      const resp = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      if (resp.status === 200) {
+        resetForm()
+        toast.success('Your message was sent successfully!')
+      }
       console.log(data)
     },
   })
@@ -36,11 +47,13 @@ const Section2 = () => {
     else setFieldValue('shippingMethod', '')
   }
   return (
-    <div id="home" className="relative w-full overflow-hidden flex items-center">
-      <div className="bg-slate-200 rounded-md p-6 mx-auto mt-12 w-full md:w-6/12">
+    <div id="home" className="h-[680px] lg:h-[520px] relative w-full flex items-center px-4">
+      <div className="bg-primary-blue bg-opacity-60 rounded-md p-6 mx-auto transform -translate-y-[75px] lg:-translate-y-1/4 z-10 w-full md:w-6/12">
+        <div className="text-white text-xl font-semibold">Quick Quote</div>
+        <p className="mb-8 text-white">We will contact you and arrange your shipment goods</p>
         <form onSubmit={handleSubmit} className="">
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel htmlFor="source" className="text-primary-blue font-bold">
+            <InputLabel htmlFor="source" className="text-white font-bold">
               From
             </InputLabel>
             <CssTextField
@@ -60,7 +73,7 @@ const Section2 = () => {
           </div>
 
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel htmlFor="destination" className="text-primary-blue font-bold">
+            <InputLabel htmlFor="destination" className="text-white font-bold">
               To
             </InputLabel>
             <CssTextField
@@ -80,7 +93,7 @@ const Section2 = () => {
           </div>
 
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel htmlFor="goods" className="text-primary-blue font-bold">
+            <InputLabel htmlFor="goods" className="text-white font-bold">
               Goods
             </InputLabel>
             <CssTextField
@@ -100,7 +113,7 @@ const Section2 = () => {
           </div>
 
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel className="text-primary-blue font-bold">Shipping Method</InputLabel>
+            <InputLabel className="text-white font-bold">Shipping Method</InputLabel>
             <div className="flex flex-row space-x-2">
               {types.map((item) => {
                 return (
@@ -126,7 +139,7 @@ const Section2 = () => {
           </div>
 
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel htmlFor="customerName" className="text-primary-blue font-bold">
+            <InputLabel htmlFor="customerName" className="text-white font-bold">
               Name
             </InputLabel>
             <CssTextField
@@ -146,7 +159,7 @@ const Section2 = () => {
           </div>
 
           <div className="flex flex-col space-y-2 mb-4">
-            <InputLabel htmlFor="email" className="text-primary-blue font-bold">
+            <InputLabel htmlFor="email" className="text-white font-bold">
               Business Email
             </InputLabel>
             <CssTextField
@@ -165,8 +178,8 @@ const Section2 = () => {
             />
           </div>
 
-          <div className="flex justify-center">
-            <Button type="submit" variant="contained" className="bg-primary-blue">
+          <div className="flex justify-center mt-8">
+            <Button type="submit" variant="contained" className="bg-primary-yellow rounded-full">
               Submit
             </Button>
           </div>

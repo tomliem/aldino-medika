@@ -1,9 +1,10 @@
 import './globals.css'
+import 'react-toastify/dist/ReactToastify.min.css';
 import type { Metadata } from 'next'
 import Footer from '@/components/base/Layout/Footer'
 import Header from '@/components/base/Layout/Header'
+import { ToastContainer } from 'react-toastify';
 import { Inter } from 'next/font/google'
-import { useRouter } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="bg-white min-h-[600px]">{children}</main>
         <Footer />
+
+        <ToastContainer closeButton={false} pauseOnHover={false} autoClose={3000} position="top-center" />
       </body>
     </html>
   )
