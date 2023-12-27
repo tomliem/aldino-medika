@@ -14,7 +14,7 @@ const Footer = () => (
         <div className="">(6221)-5662013</div>
       </div>
     </div>
-    <div className="py-5 px-2 sm:px-8 border bg-primary-blue text-white text-center">
+    <div className="py-5 px-2 sm:px-8 bg-primary-blue text-white text-center">
       © ALDINO FREIGHT AND TRADING {new Date().getFullYear()}. ALL RIGHT RESERVED. PT ABC
     </div>
   </footer>
