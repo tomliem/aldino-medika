@@ -98,7 +98,9 @@ const MobileNavBar = () => {
       <IconButton onClick={handleOpen}>
         <IoMenu className="text-white" />
       </IconButton>
-      <Drawer anchor="left" open={state} onClose={toggleDrawer(false)}>
+      <Drawer anchor="left" open={state} onClose={toggleDrawer(false)} PaperProps={{
+        className: "bg-primary-blue font-semibold"
+      }}>
         {list()}
       </Drawer>
     </>

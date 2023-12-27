@@ -34,7 +34,7 @@ export const Section2 = () => {
           </p>
         </div>
       </div>
-      <div className="mt-6 md:mt-20 max-w-7xl w-full overflow-hidden">
+      <div className="mt-6 md:mt-24 max-w-7xl w-full overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
           <div className="bg-opacity-50 py-8 px-8 vision-card">
             <div className="bg-overlay"></div>

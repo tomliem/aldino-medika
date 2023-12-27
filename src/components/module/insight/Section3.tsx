@@ -6,10 +6,10 @@ export const Section3 = () => {
   return (
     <div id={menuKey[1]} className="w-full mt-8 px-4 items-center flex flex-col">
       <h1 className="text-center text-3xl text-primary-yellow font-bold">Insight</h1>
-      <div className="mt-4 w-full max-w-7xl">
+      <div className="mt-8 w-full max-w-7xl">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-3">
-            <div className="p-8 border-2 h-full border-primary-blue text-center text-lg font-bold flex items-center justify-center">1</div>
+            <div className="py-12 bg-plane bg-blend-multiply bg-opacity-30 bg-black bg-cover bg-center shadow-black text-white shadow-inner h-full  text-center text-3xl font-bold flex items-center justify-center">1</div>
           </div>
           <div className="col-span-9">
             <div className="bg-primary-blue text-white text-justify h-full px-8 py-4 flex items-center">
@@ -26,11 +26,11 @@ export const Section3 = () => {
             </div>
           </div>
           <div className="col-span-3">
-            <div className="p-8 h-full border-2 border-primary-blue text-center text-lg font-bold flex items-center justify-center">2</div>
+            <div className="py-12 bg-blend-multiply shadow-black h-full bg-cover bg-no-repeat bg-center bg-ship text-center text-3xl font-bold flex text-white bg-black bg-opacity-30 items-center justify-center">2</div>
           </div>
 
           <div className="col-span-3">
-            <div className="p-8 h-full border-2 border-primary-blue text-center text-lg font-bold flex items-center justify-center">3</div>
+            <div className="py-12 text-white bg-blend-multiply bg-opacity-30 bg-black h-full bg-truck bg-cover bg-no-repeat bg-center shadow-black text-center text-3xl font-bold flex items-center justify-center">3</div>
           </div>
           <div className="col-span-9">
             <div className="bg-primary-blue text-white py-4 text-justify h-full px-8 flex items-center">
