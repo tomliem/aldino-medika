@@ -7,7 +7,7 @@ const Footer = () => (
   <footer>
     <div className="py-5 px-2 text-white bg-primary-dark mt-8">
       <Logo />
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="col-span-1">
           <div className="ml-4 mt-4">
             <div>Jl. Muwardi No. 22, Jakarta Barat 11450</div>
@@ -26,7 +26,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="py-5 px-2 sm:px-8 bg-primary-blue text-white text-center  lg:text-base text-xs">
-      © ALDINO FREIGHT AND TRADING {new Date().getFullYear()}. ALL RIGHT RESERVED. PT ABC
+      © ALDINO FREIGHT AND TRADING {new Date().getFullYear()}. ALL RIGHT RESERVED
     </div>
   </footer>
 )
