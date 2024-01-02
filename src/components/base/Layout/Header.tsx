@@ -14,7 +14,8 @@ const Header = () => {
             <Logo />
           </a>
           <div className="flex flex-col justify-center text-primary-yellow font-semibold text-sm">
-            <div>Hotline: (6221) - 5662013</div>
+            <a href="tel:+62215662013">Hotline ID: (+6221) - 5662013</a>
+            <a href="tel:+6567445711">Hotline SG: (+65) - 67445711</a>
           </div>
         </div>
         <div className="py-2 px-2 sm:px-8 bg-primary-blue hidden md:block">
