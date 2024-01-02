@@ -2,7 +2,7 @@
 import { NavBar } from '@/components/base/Layout/NavBar/NavBar'
 import { Logo } from '@/components/base/Logo/Logo'
 import clsx from 'clsx';
-import { useScroll, useWindowScroll } from 'react-use';
+import { useWindowScroll } from 'react-use';
 
 const Header = () => {
   const {y} = useWindowScroll();
