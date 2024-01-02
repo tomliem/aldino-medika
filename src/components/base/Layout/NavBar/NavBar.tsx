@@ -69,6 +69,7 @@ const MobileNavBar = () => {
                 isActive={ref === linkRef}
                 href={`${isNewPage ? '' : pathname}${ref}`}
                 onClick={() => {
+                  setState(null)
                   if (isNewPage) return
                   const element = document.getElementById(id[1])
                   if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -89,6 +90,7 @@ const MobileNavBar = () => {
   
   const isOpen = Boolean(state);
   const id = isOpen ? 'simple-popover' : undefined;
+  const onClose = () => setState(null)
   return (
     <>
       <IconButton aria-describedby={id} onClick={handleOpen}>
@@ -97,7 +99,7 @@ const MobileNavBar = () => {
       <Popover
         open={isOpen}
         anchorEl={state}
-        onClose={() => setState(null)}
+        onClose={onClose}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'left',
