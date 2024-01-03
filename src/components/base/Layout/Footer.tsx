@@ -10,6 +10,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="col-span-1">
           <div className="ml-4 mt-4">
+            <div className="font-bold italic">Indonesia Office</div>
             <div>Jl. Muwardi No. 22, Jakarta Barat 11450</div>
             <div>
               <a href="mailto:info@aldinofnt.com" className="mt-4">
@@ -26,6 +27,7 @@ const Footer = () => (
 
         <div className="col-span-1">
           <div className="ml-4 mt-4">
+            <div className="font-bold italic">Singapore Office</div>
             <div>51, Ubi Avenue 1 #01-27 Paya Ubi Industrial Park, Singapore 408933</div>
             <div>
               <a href="mailto:info@aldinofnt.com" className="mt-4">
