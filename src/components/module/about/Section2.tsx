@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import MainBanner from '@statics/banner-utama.jpg'
 import { menuKey } from '@/constants/menus'
 
 export const Section2 = () => {
@@ -39,12 +37,12 @@ export const Section2 = () => {
           <div className="bg-opacity-50 py-8 px-8 vision-card">
             <div className="bg-overlay"></div>
             <h2 className="text-left text-4xl font-bold">Vision</h2>
-            <p className="mt-4 text-justify pr-24">Providing forwarding facilities from multinational companies from around the world.</p>
+            <p className="mt-4 text-left md:text-justify pr-12 md:pr-24">Providing forwarding facilities from multinational companies from around the world.</p>
           </div>
           <div className="bg-opacity-50 py-8 px-4 mission-card">
             <div className="bg-overlay"></div>
-            <h2 className="text-left text-4xl pl-24 font-bold">Mission</h2>
-            <p className="mt-4 text-justify pl-24">
+            <h2 className="text-right md:text-left text-4xl pl-24 font-bold">Mission</h2>
+            <p className="mt-4 text-right md:text-justify pl-12 md:pl-24">
               Providing premium services with the most efficient cost to our customers. Making customer satisfaction as
               our top priority. Becoming the most reliable company as a business development partner in logistic
               section.

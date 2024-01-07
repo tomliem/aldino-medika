@@ -4,6 +4,8 @@ import { Button, Checkbox, InputLabel, TextField } from '@mui/material'
 import { useFormik } from 'formik'
 import { toast } from 'react-toastify'
 import clsx from 'clsx'
+import Link from 'next/link'
+import { FiExternalLink } from "react-icons/fi";
 
 const CssTextField = styled(TextField)({
   '& label.Mui-focused': {
@@ -189,10 +191,14 @@ const Section2 = () => {
             </div>
           </div>
 
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-col justify-center mt-8">
             <Button type="submit" variant="contained" className="bg-primary-yellow rounded-full">
               Submit
             </Button>
+
+            <div className="text-primary-dark flex items-center flex-col mt-2">
+              <Link href="/about-us" className="px-6 py-2 flex space-x-2 items-center text-white font-bold"><span>Know More About Us</span> <FiExternalLink /></Link>
+            </div>
           </div>
         </form>
       </div>

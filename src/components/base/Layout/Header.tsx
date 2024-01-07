@@ -13,9 +13,11 @@ const Header = () => {
           <a href="/" className="w-20 sm:w-32">
             <Logo />
           </a>
-          <div className="flex flex-col justify-center text-primary-yellow font-semibold text-sm">
-            <a href="tel:+62215662013">Hotline ID: (+6221) - 5662013</a>
-            <a href="tel:+6567445711">Hotline SG: (+65) - 67445711</a>
+          <div className="grid grid-cols-2 gap-x-2">
+            <div className="col-span-1 text-primary-dark font-semibold text-sm text-right">Hotline ID: </div>
+            <div className="col-span-1 text-primary-blue font-bold text-sm text-left"><a href="tel:+62215662013">(+6221) - 5662013</a></div>
+            <div className="col-span-1 text-primary-dark font-semibold text-sm text-right">Hotline SG: </div>
+            <div className="col-span-1 text-primary-blue font-bold text-sm text-left"><a href="tel:+6567445711">(+65) - 67445711</a></div>
           </div>
         </div>
         <div className="py-2 px-2 sm:px-8 bg-primary-blue hidden md:block">

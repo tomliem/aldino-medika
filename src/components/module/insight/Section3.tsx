@@ -21,7 +21,7 @@ export const Section3 = () => {
           </div>
 
           <div className="col-span-9">
-            <div className="bg-white text-primary-dark py-2 lg:py-4 text-left h-full px-2 lg:px-8 flex items-center">
+            <div className="bg-white text-primary-dark py-2 lg:py-4 text-right h-full px-2 lg:px-8 flex items-center">
               Aldino Freight and Trading PTE.LTD is the best solution to overcome all the risk. We offer our valueable
               customers a full transportation solution, covering all their requirements within our network.
             </div>
