@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Footer = () => (
   <footer>
-    <div className="py-5 px-2 text-white bg-primary-dark mt-8">
+    <div className="py-5 px-2 text-primary-dark  mt-8" style={{backgroundColor: '#f8f6f0'}}>
       <Logo />
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="col-span-1">

@@ -17,7 +17,7 @@ export const Section2 = () => {
             <span className="italic">door to door services</span> from around the world.
           </p>
           <p className="mt-4  text-white text-sm md:text-xl">
-            Established in 1995, our company is managed and developed by our experienced professional teams and agents
+            Established in 1994, our company is managed and developed by our experienced professional teams and agents
             from across the globe to be the best transportation partner, providing our valueable customers a trustworthy
             experience in building their companies with us.
           </p>

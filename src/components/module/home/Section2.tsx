@@ -49,8 +49,8 @@ const Section2 = () => {
     else setFieldValue('shippingMethod', '')
   }
   return (
-    <div id="home" className="h-[680px] lg:h-[400px] relative w-full flex items-center px-4">
-      <div className="bg-primary-dark bg-opacity-90 rounded-md p-6 mx-auto transform -translate-y-[40px] lg:-translate-y-[120px] z-10 w-full md:w-6/12">
+    <div id="home" className="h-[730px] md:h-[400px] relative w-full flex items-center px-4">
+      <div className="bg-primary-dark bg-opacity-90 rounded-md p-6 mx-auto transform -translate-y-[30px] md:-translate-y-[120px] z-10 w-full md:w-6/12">
         <div className="text-white text-xl font-semibold">Quick Quote</div>
         <p className="mb-8 text-white">We will contact you and arrange your shipment goods</p>
         <form onSubmit={handleSubmit} className="">
