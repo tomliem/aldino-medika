@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="text-blue-site bg-white">
-        <main className="bg-white min-h-[600px]">{children}</main>
+        <main className="bg-white">{children}</main>
       </body>
     </html>
   )
