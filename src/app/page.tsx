@@ -18,9 +18,21 @@ export default function Home() {
         {/* <div className="text-[#da616b] font-semibold text-2xl text-center transform -translate-y-[120px] justify-center flex-1 w-full items-center flex">One Stop Occupational Health-Safety & Enviromental Services</div> */}
       </div>
       <div className='mx-auto aspect-w-16 aspect-h-9 w-full relative'>
-        <Image src={ComingSoon} className="object-cover" fill />
+        <Image src={ComingSoon} className="object-cover" fill alt="Main Banner" />
       </div>
-      
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-[#f5fffa]">
+        <div className="p-4">
+          <div className="text-md lg:text-base text-[#207990]">Strategic Location</div>
+          <div className="text-xs lg:text-md">(In between Jababeka Industrial Area and Lippo Cikarang Industrial Area)</div>
+          <div className='font-semibold text-md lg:text-base text-[#207990]'>With over 2125 factories from 25 different countries.</div>
+        </div>
+
+        <div className="p-4">
+          <div className="text-md lg:text-base text-[#207990]">In Cikarang Area with 13.000 ㎡</div>
+          <div className='font-semibold text-md lg:text-base text-[#207990]'>The first and the largest Occupational Integrated Based.</div>
+        </div>
+      </div>
+        
     </div>
   )
 }
