@@ -48,6 +48,7 @@ module.exports = {
                 'black': '#161c2d',
                 'dark-footer': '#161c28',
                 "primary-green": '#207990',
+                "primary-lightGreen": "#31ddd1",
                 
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

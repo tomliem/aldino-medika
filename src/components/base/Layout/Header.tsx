@@ -1,6 +1,6 @@
 'use client'
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
@@ -19,7 +19,7 @@ import { Avatar } from '@mui/material';
 
 const StyledSearch = styled((props: TextFieldProps) => (
   <TextField {...props} />
-))(({ theme }) => ({
+))(({ }) => ({
   '& fieldset': {
     borderRadius: '9999px',
   },
@@ -86,12 +86,53 @@ const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         variant="contained"
+        color="aldinoGreen"
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
       >
         {label}
       </Button>
+      <StyledMenu
+          id="demo-customized-menu"
+          MenuListProps={{
+            'aria-labelledby': 'demo-customized-button',
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose} disableRipple>
+            <EditIcon />
+            Edit
+          </MenuItem>
+          <MenuItem onClick={handleClose} disableRipple>
+            <FileCopyIcon />
+            Duplicate
+          </MenuItem>
+          <Divider sx={{ my: 0.5 }} />
+          <MenuItem onClick={handleClose} disableRipple>
+            <ArchiveIcon />
+            Archive
+          </MenuItem>
+        </StyledMenu>
+    </>
+  )
+}
+
+const AvatarWithMenu = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  return (
+    <>
+      <Avatar alt="Remy Sharp" src="/01.jpg" className="cursor-pointer" onClick={handleClick} />
+      
       <StyledMenu
           id="demo-customized-menu"
           MenuListProps={{
@@ -128,15 +169,20 @@ const Header = () => {
           <Link className="logo" href="/">
             <Logo />
           </Link>
-          <div className="flex space-x-4">
+          <div className="flex items-center space-x-4">
+            <Link href="/">
+              <Button className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</Button>
+            </Link>
             <MenuWithDropdown label="About Us" />
             <MenuWithDropdown label="Services" />
             <MenuWithDropdown label="Contact Us" />
             <div className="bg-white rounded-full">
               <StyledSearch placeholder="Search..." variant="outlined" size='small' />
             </div>
-            
-            <Avatar alt="Remy Sharp" src="/01.jpg" />
+            <div className="flex space-x-4 items-center">
+              <a href="#" className="text-white">Sign In</a>
+              <AvatarWithMenu />
+            </div>
           </div>
         </div>
       </nav>
