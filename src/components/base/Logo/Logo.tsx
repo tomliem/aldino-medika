@@ -3,6 +3,13 @@ import LogoImage from '@statics/logo.png'
 
 export const Logo = () => {
   return (
-    <Image src={LogoImage} alt="Aldino FNT" width={120} />
+    <>
+      <div className="block sm:hidden flex space-x-4">
+        <img src="images/logo-icon-40.png" className="h-10"  alt="" />
+      </div>
+      <div className="sm:block hidden">
+        <img src="images/logo-dark.png" className="h-[24px]" alt="" />
+      </div>
+    </>
   )
 }

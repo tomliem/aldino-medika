@@ -73,92 +73,30 @@
   body {
     @apply bg-background text-foreground;
   }
-  .vision-card {
-    position: relative;
-    background-image:
-    linear-gradient(to bottom right, transparent 0%, #252525 0),
-    linear-gradient(65deg, #252525 75%, transparent 0);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    color: white;
-    background-position: left, right;
-  }
-  .vision-card .bg-overlay {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    background-image:
-    linear-gradient(to bottom right, transparent 0%, #24619c 0),
-    linear-gradient(65deg, #24619c 75%, transparent 0);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    transition: all 650ms;
-    transform: translateX(-100%);
-  }
-  .vision-card h2 {
-    color: #24619c;
-    position: relative;
-  }
-  .vision-card p {
-    position: relative;
-  }
-  .vision-card:hover .bg-overlay {
-    transform: translateX(0%);
-  }
-  .vision-card:hover h2{
-    color: white
-  }
-  .vision-card:hover p {
-    color: white;
+  
+  #topnav{
+    position: fixed;
+    inset-inline-start: 0px;
+    inset-inline-end: 0px;
+    top: 0px;
+    z-index: 999;
+    border-width: 0px;
+    background-color: transparent;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .mission-card {
-    position: relative;
-    color: white;
-    background-image:
-    linear-gradient(65deg, transparent 25%, #252525 0),
-    linear-gradient(to top right, #252525 100%, transparent 0);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    background-position: left, right;
+  #topnav.nav-sticky{
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    --tw-shadow: 0 0 3px rgb(60 72 88 / 0.15);
+    --tw-shadow-colored: 0 0 3px var(--tw-shadow-color);
+    -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
-
-  .mission-card h2 {
-    color: #d4ad3c;
-    position: relative;
-  }
-  .mission-card:hover h2{
-    color: white;
-  }
-
-  .mission-card .bg-overlay {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 0;
-    background-image:
-    linear-gradient(65deg, transparent 25%, #d4ad3c 0),
-    linear-gradient(to top right, #d4ad3c 100%, transparent 0);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    background-position: left, right;
-    transition: all 650ms;
-    transform: translateX(100%);
-  }
-  .mission-card:hover .bg-overlay {
-    transform: translateX(0%);
-  }
-  .mission-card p {
-    position: relative;
-  }
-  .mission-card:hover p {
-    color: white;
-  }
-
 }
+
