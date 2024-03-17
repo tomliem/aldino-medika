@@ -1,13 +1,15 @@
 'use client'
 import * as React from 'react';
-import { styled, alpha } from '@mui/material';
+import { styled, alpha, Dialog, AppBar, Toolbar, IconButton, List, Typography, ListItemButton, ListItemText } from '@mui/material';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import MenuIcon from '@mui/icons-material/Menu';
 import EditIcon from '@mui/icons-material/Edit';
 import Divider from '@mui/material/Divider';
 import ArchiveIcon from '@mui/icons-material/Archive';
+import CloseIcon from '@mui/icons-material/Close';
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Logo } from '@/components/base/Logo/Logo'
@@ -15,6 +17,17 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useWindowScroll } from 'react-use';
 import { Avatar } from '@mui/material';
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 
 const StyledSearch = styled((props: TextFieldProps) => (
@@ -160,6 +173,7 @@ const AvatarWithMenu = () => {
   )
 }
 const Header = () => {
+  const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
   const {y} = useWindowScroll();
   const isScrolled = y > 10;
   return (
@@ -170,22 +184,61 @@ const Header = () => {
             <Logo />
           </Link>
           <div className="flex items-center space-x-4">
-            <Link href="/">
-              <Button className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</Button>
-            </Link>
-            <MenuWithDropdown label="About Us" />
-            <MenuWithDropdown label="Services" />
-            <MenuWithDropdown label="Contact Us" />
-            <div className="bg-white rounded-full">
+            <div className="hidden lg:flex space-x-4 items-center">
+              <Link href="/">
+                <Button className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</Button>
+              </Link>
+              <MenuWithDropdown label="About Us" />
+              <MenuWithDropdown label="Services" />
+              <MenuWithDropdown label="Contact Us" />
+            </div>
+            <div className="bg-white rounded-full hidden lg:flex">
               <StyledSearch placeholder="Search..." variant="outlined" size='small' />
             </div>
             <div className="flex space-x-4 items-center">
-              <a href="#" className="text-white">Sign In</a>
+              <a href="#" className="text-white hidden lg:block">Sign In</a>
               <AvatarWithMenu />
+              <IconButton className="bg-primary-lightGreen rounded-full" onClick={() => setOpenMobileMenu(true)}>
+                <MenuIcon className="text-white" />
+              </IconButton>
             </div>
           </div>
         </div>
       </nav>
+      <Dialog
+        fullScreen
+        open={openMobileMenu}
+        onClose={() => setOpenMobileMenu(false)}
+        TransitionComponent={Transition}
+      >
+        <AppBar sx={{ position: 'relative' }}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={() => setOpenMobileMenu(false)}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+              Menu
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <List>
+          <ListItemButton>
+            <ListItemText primary="Phone ringtone" secondary="Titania" />
+          </ListItemButton>
+          <Divider />
+          <ListItemButton>
+            <ListItemText
+              primary="Default notification ringtone"
+              secondary="Tethys"
+            />
+          </ListItemButton>
+        </List>
+      </Dialog>
     </>
   )
 }
