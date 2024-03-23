@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { styled, alpha, Dialog, AppBar, Toolbar, IconButton, List, Typography, ListItemButton, ListItemText } from '@mui/material';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import Button, { ButtonProps } from '@mui/material/Button';
 import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -29,6 +29,13 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+const StyledButton = styled((props: ButtonProps) => (
+  <Button {...props} />
+))(({}) => ({
+  '& .MuiButtonBase-root': {
+    background: 'transparent'
+  }
+}))
 
 const StyledSearch = styled((props: TextFieldProps) => (
   <TextField {...props} />
@@ -93,7 +100,7 @@ const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
 
   return (
     <>
-      <Button
+      <StyledButton
         id="demo-customized-button"
         aria-controls={open ? 'demo-customized-menu' : undefined}
         aria-haspopup="true"
@@ -105,7 +112,7 @@ const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
         endIcon={<KeyboardArrowDownIcon />}
       >
         {label}
-      </Button>
+      </StyledButton>
       <StyledMenu
           id="demo-customized-menu"
           MenuListProps={{
@@ -186,7 +193,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
               <Link href="/">
-                <Button className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</Button>
+                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</StyledButton>
               </Link>
               <MenuWithDropdown label="About Us" />
               <MenuWithDropdown label="Services" />
