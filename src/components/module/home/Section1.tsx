@@ -2,7 +2,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export const Section1 = () => {
   return (
-    <section className="relative flex py-36 md:h-screen h-auto  items-center bg-[url('/banner-coming-soon.jpg')] bg-center bg-no-repeat bg-cover">
+    <section className="relative flex py-36 md:h-screen h-auto  items-center bg-[url('/images/banner-main.jpg')] md:bg-[url('/images/banner-main-desktop.jpg')] bg-center bg-no-repeat bg-cover">
       <div className="absolute inset-0 bg-gray-900/60"></div>
       <div className="container z-1">
         <div className="grid grid-cols-1 mx-10 mt-10 relative">

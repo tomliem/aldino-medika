@@ -179,12 +179,12 @@ const Header = () => {
   return (
     <>
       <nav id="topnav" className={clsx('defaultscroll py-4 is-sticky', isScrolled ? 'nav-sticky' : '')}>
-        <div className="container flex justify-between">
+        <div className="max-w-7xl px-4 flex mx-auto justify-between">
           <Link className="logo" href="/">
             <Logo />
           </Link>
           <div className="flex items-center space-x-4">
-            <div className="hidden lg:flex space-x-4 items-center">
+            <div className="hidden lg:flex items-center">
               <Link href="/">
                 <Button className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</Button>
               </Link>
