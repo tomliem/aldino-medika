@@ -1,45 +1,52 @@
 'use client'
-import * as React from 'react';
-import { styled, alpha, Dialog, AppBar, Toolbar, IconButton, List, Typography, ListItemButton, ListItemText } from '@mui/material';
-import TextField, { TextFieldProps } from '@mui/material/TextField';
-import Button, { ButtonProps } from '@mui/material/Button';
-import Menu, { MenuProps } from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
-import EditIcon from '@mui/icons-material/Edit';
-import Divider from '@mui/material/Divider';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import CloseIcon from '@mui/icons-material/Close';
-import FileCopyIcon from '@mui/icons-material/FileCopy';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import * as React from 'react'
+import {
+  styled,
+  alpha,
+  Dialog,
+  AppBar,
+  Toolbar,
+  IconButton,
+  List,
+  Typography,
+  ListItemButton,
+  ListItemText,
+} from '@mui/material'
+import TextField, { TextFieldProps } from '@mui/material/TextField'
+import Button, { ButtonProps } from '@mui/material/Button'
+import Menu, { MenuProps } from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import MenuIcon from '@mui/icons-material/Menu'
+import EditIcon from '@mui/icons-material/Edit'
+import Divider from '@mui/material/Divider'
+import ArchiveIcon from '@mui/icons-material/Archive'
+import CloseIcon from '@mui/icons-material/Close'
+import FileCopyIcon from '@mui/icons-material/FileCopy'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Logo } from '@/components/base/Logo/Logo'
-import clsx from 'clsx';
-import Link from 'next/link';
-import { useWindowScroll } from 'react-use';
-import { Avatar } from '@mui/material';
-import Slide from '@mui/material/Slide';
-import { TransitionProps } from '@mui/material/transitions';
+import clsx from 'clsx'
+import Link from 'next/link'
+import { useWindowScroll } from 'react-use'
+import { Avatar } from '@mui/material'
+import Slide from '@mui/material/Slide'
+import { TransitionProps } from '@mui/material/transitions'
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
-    children: React.ReactElement;
+    children: React.ReactElement
   },
-  ref: React.Ref<unknown>,
+  ref: React.Ref<unknown>
 ) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+  return <Slide direction="up" ref={ref} {...props} />
+})
 
-const StyledButton = styled((props: ButtonProps) => (
-  <Button {...props} />
-))(({}) => ({
+const StyledButton = styled((props: ButtonProps) => <Button {...props} />)(({}) => ({
   '& .MuiButtonBase-root': {
-    background: 'transparent'
-  }
+    background: 'transparent',
+  },
 }))
 
-const StyledSearch = styled((props: TextFieldProps) => (
-  <TextField {...props} />
-))(({ }) => ({
+const StyledSearch = styled((props: TextFieldProps) => <TextField {...props} />)(({}) => ({
   '& fieldset': {
     borderRadius: '9999px',
   },
@@ -62,8 +69,7 @@ const StyledMenu = styled((props: MenuProps) => (
     borderRadius: 6,
     marginTop: theme.spacing(1),
     minWidth: 180,
-    color:
-      theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+    color: theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
     boxShadow:
       'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
     '& .MuiMenu-list': {
@@ -76,27 +82,24 @@ const StyledMenu = styled((props: MenuProps) => (
         marginRight: theme.spacing(1.5),
       },
       '&:active': {
-        backgroundColor: alpha(
-          theme.palette.primary.main,
-          theme.palette.action.selectedOpacity,
-        ),
+        backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
       },
     },
   },
-}));
+}))
 
 interface MenuWithDropdownProps {
-  label: string;
-} 
+  label: string
+}
 const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <>
@@ -114,75 +117,75 @@ const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
         {label}
       </StyledButton>
       <StyledMenu
-          id="demo-customized-menu"
-          MenuListProps={{
-            'aria-labelledby': 'demo-customized-button',
-          }}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={handleClose} disableRipple>
-            <EditIcon />
-            Edit
-          </MenuItem>
-          <MenuItem onClick={handleClose} disableRipple>
-            <FileCopyIcon />
-            Duplicate
-          </MenuItem>
-          <Divider sx={{ my: 0.5 }} />
-          <MenuItem onClick={handleClose} disableRipple>
-            <ArchiveIcon />
-            Archive
-          </MenuItem>
-        </StyledMenu>
+        id="demo-customized-menu"
+        MenuListProps={{
+          'aria-labelledby': 'demo-customized-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose} disableRipple>
+          <EditIcon />
+          Edit
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          <FileCopyIcon />
+          Duplicate
+        </MenuItem>
+        <Divider sx={{ my: 0.5 }} />
+        <MenuItem onClick={handleClose} disableRipple>
+          <ArchiveIcon />
+          Archive
+        </MenuItem>
+      </StyledMenu>
     </>
   )
 }
 
 const AvatarWithMenu = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
   return (
     <>
       <Avatar alt="Remy Sharp" src="/01.jpg" className="cursor-pointer" onClick={handleClick} />
-      
+
       <StyledMenu
-          id="demo-customized-menu"
-          MenuListProps={{
-            'aria-labelledby': 'demo-customized-button',
-          }}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={handleClose} disableRipple>
-            <EditIcon />
-            Edit
-          </MenuItem>
-          <MenuItem onClick={handleClose} disableRipple>
-            <FileCopyIcon />
-            Duplicate
-          </MenuItem>
-          <Divider sx={{ my: 0.5 }} />
-          <MenuItem onClick={handleClose} disableRipple>
-            <ArchiveIcon />
-            Archive
-          </MenuItem>
-        </StyledMenu>
+        id="demo-customized-menu"
+        MenuListProps={{
+          'aria-labelledby': 'demo-customized-button',
+        }}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={handleClose} disableRipple>
+          <EditIcon />
+          Edit
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          <FileCopyIcon />
+          Duplicate
+        </MenuItem>
+        <Divider sx={{ my: 0.5 }} />
+        <MenuItem onClick={handleClose} disableRipple>
+          <ArchiveIcon />
+          Archive
+        </MenuItem>
+      </StyledMenu>
     </>
   )
 }
 const Header = () => {
-  const [openMobileMenu, setOpenMobileMenu] = React.useState(false);
-  const {y} = useWindowScroll();
-  const isScrolled = y > 10;
+  const [openMobileMenu, setOpenMobileMenu] = React.useState(false)
+  const { y } = useWindowScroll()
+  const isScrolled = y > 10
   return (
     <>
       <nav id="topnav" className={clsx('defaultscroll py-4 is-sticky', isScrolled ? 'nav-sticky' : '')}>
@@ -193,17 +196,31 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
               <Link href="/">
-                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">HOME</StyledButton>
+                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                  HOME
+                </StyledButton>
               </Link>
-              <MenuWithDropdown label="About Us" />
+
+              <Link href="/xyxy/about-us">
+                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                  ABOUT US
+                </StyledButton>
+              </Link>
               <MenuWithDropdown label="Services" />
-              <MenuWithDropdown label="Contact Us" />
+
+              <Link href="/xyxy/contact-us">
+                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                  CONTACT US
+                </StyledButton>
+              </Link>
             </div>
             <div className="bg-white rounded-full hidden lg:flex">
-              <StyledSearch placeholder="Search..." variant="outlined" size='small' />
+              <StyledSearch placeholder="Search..." variant="outlined" size="small" />
             </div>
             <div className="flex space-x-4 items-center">
-              <a href="#" className="text-white hidden lg:block">Sign In</a>
+              <a href="#" className="text-white hidden lg:block">
+                Sign In
+              </a>
               <AvatarWithMenu />
               <IconButton className="bg-primary-lightGreen rounded-full" onClick={() => setOpenMobileMenu(true)}>
                 <MenuIcon className="text-white" />
@@ -220,12 +237,7 @@ const Header = () => {
       >
         <AppBar sx={{ position: 'relative' }}>
           <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={() => setOpenMobileMenu(false)}
-              aria-label="close"
-            >
+            <IconButton edge="start" color="inherit" onClick={() => setOpenMobileMenu(false)} aria-label="close">
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
@@ -239,10 +251,7 @@ const Header = () => {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <ListItemText
-              primary="Default notification ringtone"
-              secondary="Tethys"
-            />
+            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
           </ListItemButton>
         </List>
       </Dialog>

@@ -1,4 +1,4 @@
-import { menuKey } from '@/constants/menus'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import Link from 'next/link'
 
 export const SectionContactUs = () => {
@@ -71,8 +71,8 @@ export const SectionContactUs = () => {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2">
-                <div className="mb-5">
+              <div className="grid grid-cols-1">
+                <div className="col-span-1 flex flex-col mb-5">
                   <label htmlFor="subject" className="font-semibold">
                     Your Question:
                   </label>
@@ -83,8 +83,9 @@ export const SectionContactUs = () => {
                     placeholder="Subject :"
                   />
                 </div>
-
-                <div className="mb-5">
+              </div>
+              <div className="grid grid-col-1">
+                <div className="col-span-1 flex flex-col mb-5">
                   <label htmlFor="comments" className="font-semibold">
                     Your Comment:
                   </label>
@@ -105,6 +106,90 @@ export const SectionContactUs = () => {
                 Send Message
               </button>
             </form>
+          </div>
+
+          <div className="mx-auto mt-6">
+            <div className="font-bold text-center">Or</div>
+            <a className="mx-auto mt-8 lg:mt-4 px-2 py-1 bg-gray-200 hover:bg-gray-300 transition-all rounded-lg cursor-pointer w-fit flex items-center font-semibold">
+              <WhatsAppIcon className="mr-1 text-[#25D366]" /> Click here for more info
+            </a>
+          </div>
+        </div>
+        <div className="container pb-24 mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
+            <div className="text-center px-6">
+              <div className="relative text-transparent">
+                <div className="size-14 bg-emerald-600/5 text-emerald-600 rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-sm dark:shadow-gray-800">
+                  <i className="uil uil-phone"></i>
+                </div>
+              </div>
+
+              <div className="content mt-7">
+                <h5 className="title h5 text-lg font-semibold">Phone</h5>
+                <p className="text-slate-400 mt-3">
+                  The phrasal sequence of the is now so that many campaign and benefit
+                </p>
+
+                <div className="mt-5">
+                  <a
+                    href="tel:+62895332067767"
+                    className="btn btn-link text-emerald-600 hover:text-emerald-600 after:bg-emerald-600 transition duration-500"
+                  >
+                    +62 8953 3206 7767
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center px-6">
+              <div className="relative text-transparent">
+                <div className="size-14 bg-emerald-600/5 text-emerald-600 rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-sm dark:shadow-gray-800">
+                  <i className="uil uil-envelope"></i>
+                </div>
+              </div>
+
+              <div className="content mt-7">
+                <h5 className="title h5 text-lg font-semibold">Email</h5>
+                <p className="text-slate-400 mt-3">
+                  The phrasal sequence of the is now so that many campaign and benefit
+                </p>
+
+                <div className="mt-5">
+                  <a
+                    href="mailto:customer.relations@aldinomedika.co.id"
+                    className="btn btn-link text-emerald-600 hover:text-emerald-600 after:bg-emerald-600 transition duration-500"
+                  >
+                    customer.relations@aldinomedika.co.id
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center px-6">
+              <div className="relative text-transparent">
+                <div className="size-14 bg-emerald-600/5 text-emerald-600 rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-sm dark:shadow-gray-800">
+                  <i className="uil uil-map-marker"></i>
+                </div>
+              </div>
+
+              <div className="content mt-7">
+                <h5 className="title h5 text-lg font-semibold">Location</h5>
+                <p className="text-slate-400 mt-3">
+                  Kawasan Industri Jababeka, <br /> Jl. Tegal Danas No.673, <br /> Jaya Mukti, Cikarang Pusat, Bekasi,{' '}
+                  <br /> 17530 Jawa Barat
+                </p>
+
+                <div className="mt-5">
+                  <a
+                    href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
+                    data-type="iframe"
+                    className="video-play-icon read-more lightbox btn btn-link text-emerald-600 hover:text-emerald-600 after:bg-emerald-600 transition duration-500"
+                  >
+                    View on Google map
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
