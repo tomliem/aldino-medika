@@ -218,7 +218,7 @@ const Header = () => {
                 </StyledButton>
               </Link>
 
-              <Link href="#">
+              <Link href="/services">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -285,7 +285,7 @@ const Header = () => {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/">SERVICES</Link>
+            <Link href="/services">SERVICES</Link>
           </ListItemButton>
           <Divider />
           <ListItemButton>
