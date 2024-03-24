@@ -1,4 +1,5 @@
 'use client'
+import Footer from '@/components/base/Layout/Footer'
 import Header from '@/components/base/Layout/Header'
 import { Section1 } from '@/components/module/home/Section1'
 import { Section2 } from '@/components/module/home/Section2'
@@ -26,6 +27,7 @@ export default function HomeNew() {
           <Section1 />
           <Section2 />
         </main>
+        <Footer />
       </ThemeProvider>
     </>
   )

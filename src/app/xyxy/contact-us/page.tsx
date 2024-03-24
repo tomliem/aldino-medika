@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material'
 import { alpha, createTheme, getContrastRatio } from '@mui/material/styles'
 import { SectionAboutUs } from '@/components/module/about/SectionAboutUs'
 import { SectionContactUs } from '@/components/module/contact/SectionContactUs'
+import Footer from '@/components/base/Layout/Footer'
 
 const violetBase = '#31ddd1'
 const violetMain = alpha(violetBase, 0.7)
@@ -28,6 +29,8 @@ export default function HomeNew() {
         <main>
           <SectionContactUs />
         </main>
+
+        <Footer />
       </ThemeProvider>
     </>
   )

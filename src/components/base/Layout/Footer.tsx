@@ -1,31 +1,36 @@
 import './footer.css'
 
 import { Logo } from '@/components/base/Logo/Logo'
-import Image from 'next/image'
+import { phone } from '@/constants/agent'
 
 const Footer = () => (
   <footer>
-    <div className="py-5 px-2 text-primary-dark  mt-8" style={{backgroundColor: '#f8f6f0'}}>
+    <div className="py-5 px-2 text-primary-dark bg-primary-green">
       <Logo />
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 text-white">
         <div className="col-span-1">
           <div className="ml-4 mt-4">
-            <div className="font-bold italic">Indonesia Office</div>
-            <div>Jl. Muwardi No. 22, Jakarta Barat 11450</div>
+            {/* <div className="font-bold italic">Office</div> */}
             <div>
-              <a href="mailto:info@aldinofnt.com" className="mt-4">
-                info@aldinofnt.com
+              Kawasan Industri Jababeka, <br />
+              Jl. Tegal Danas No.673 <br />
+              Jaya Mukti, Cikarang Pusat, Bekasi <br />
+              17530 Jawa Barat
+            </div>
+            <div>
+              <a href="mailto:customer.relations@aldinomedika.co.id" className="mt-4">
+                customer.relations@aldinomedika.co.id
               </a>
             </div>
             <div>
-              <a href="tel:+62215662013" className="">
-                (+6221)-5662013
+              <a href={`tel:+${phone.csOne}`} className="">
+                {phone.csOne}
               </a>
             </div>
           </div>
         </div>
 
-        <div className="col-span-1">
+        {/* <div className="col-span-1">
           <div className="ml-4 mt-4">
             <div className="font-bold italic">Singapore Office</div>
             <div>51, Ubi Avenue 1 #01-27 Paya Ubi Industrial Park, Singapore 408933</div>
@@ -40,11 +45,11 @@ const Footer = () => (
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
-    <div className="py-5 px-2 sm:px-8 bg-primary-blue text-white text-center  lg:text-base text-xs">
-      © ALDINO FREIGHT AND TRADING {new Date().getFullYear()}. ALL RIGHT RESERVED
+    <div className="py-5 px-2 sm:px-8 bg-primary-dark text-white text-center  lg:text-base text-xs">
+      © ALDINO MEDIKA {new Date().getFullYear()}. ALL RIGHT RESERVED
     </div>
   </footer>
 )

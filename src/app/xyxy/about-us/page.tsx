@@ -2,14 +2,14 @@
 import Image from 'next/image'
 import ComingSoon from '@statics/banner-coming-soon.jpg'
 import Header from '@/components/base/Layout/Header'
-import { Section1 } from '@/components/module/home/Section1';
-import { ThemeProvider } from '@mui/material';
+import { Section1 } from '@/components/module/home/Section1'
+import { ThemeProvider } from '@mui/material'
 import { alpha, createTheme, getContrastRatio } from '@mui/material/styles'
-import { SectionAboutUs } from '@/components/module/about/SectionAboutUs';
+import { SectionAboutUs } from '@/components/module/about/SectionAboutUs'
+import Footer from '@/components/base/Layout/Footer'
 
-
-const violetBase = '#31ddd1';
-const violetMain = alpha(violetBase, 0.7);
+const violetBase = '#31ddd1'
+const violetMain = alpha(violetBase, 0.7)
 const theme = createTheme({
   palette: {
     aldinoGreen: {
@@ -19,7 +19,7 @@ const theme = createTheme({
       contrastText: getContrastRatio(violetMain, '#fff') > 1.5 ? '#fff' : '#111',
     },
   },
-});
+})
 export default function HomeNew() {
   return (
     <>
@@ -28,6 +28,8 @@ export default function HomeNew() {
         <main>
           <SectionAboutUs />
         </main>
+
+        <Footer />
       </ThemeProvider>
     </>
   )

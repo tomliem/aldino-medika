@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@mui/material'
 import { alpha, createTheme, getContrastRatio } from '@mui/material/styles'
+import Whatsapp from '@/components/base/Whatsapp/Whatsapp'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet" />
         <link href="/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
       </head>
-      <body className="bg-slate-900">{children}</body>
+      <body className="bg-slate-900">
+        {children}
+        <Whatsapp agent="csOne" />
+      </body>
     </html>
   )
 }

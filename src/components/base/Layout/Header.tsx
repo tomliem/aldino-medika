@@ -110,6 +110,7 @@ const MenuWithDropdown = ({ label }: MenuWithDropdownProps) => {
         aria-expanded={open ? 'true' : undefined}
         variant="contained"
         color="aldinoGreen"
+        className="bg-transparent hover:bg-primary-lightGreen"
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
@@ -214,15 +215,18 @@ const Header = () => {
                 </StyledButton>
               </Link>
             </div>
-            <div className="bg-white rounded-full hidden lg:flex">
+            {/* <div className="bg-white rounded-full hidden lg:flex">
               <StyledSearch placeholder="Search..." variant="outlined" size="small" />
-            </div>
-            <div className="flex space-x-4 items-center">
-              <a href="#" className="text-white hidden lg:block">
+            </div> */}
+            <div className="flex space-x-4 items-center ">
+              {/* <a href="#" className="text-white hidden lg:block">
                 Sign In
               </a>
-              <AvatarWithMenu />
-              <IconButton className="bg-primary-lightGreen rounded-full" onClick={() => setOpenMobileMenu(true)}>
+              <AvatarWithMenu /> */}
+              <IconButton
+                className="bg-primary-lightGreen rounded-full lg:hidden"
+                onClick={() => setOpenMobileMenu(true)}
+              >
                 <MenuIcon className="text-white" />
               </IconButton>
             </div>
@@ -247,11 +251,22 @@ const Header = () => {
         </AppBar>
         <List>
           <ListItemButton>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
+            <Link href="/xyxy">HOME</Link>
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+            <Link href="/xyxy/about-us">ABOUT US</Link>
+          </ListItemButton>
+          <Divider />
+          <ListItemButton>
+            <Link href="/">SERVICES 1</Link>
+          </ListItemButton>
+          <ListItemButton>
+            <Link href="/">SERVICES 2</Link>
+          </ListItemButton>
+          <Divider />
+          <ListItemButton>
+            <Link href="/xyxy/contact-us">CONTACT US</Link>
           </ListItemButton>
         </List>
       </Dialog>
