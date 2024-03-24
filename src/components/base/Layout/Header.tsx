@@ -190,12 +190,12 @@ const Header = () => {
     <>
       <nav id="topnav" className={clsx('defaultscroll py-4 is-sticky', isScrolled ? 'nav-sticky' : '')}>
         <div className="max-w-7xl px-4 flex mx-auto justify-between">
-          <Link className="logo" href="/">
+          <Link className="logo" href="/xyxy">
             <Logo />
           </Link>
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
-              <Link href="/">
+              <Link href="/xyxy">
                 <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
                   HOME
                 </StyledButton>

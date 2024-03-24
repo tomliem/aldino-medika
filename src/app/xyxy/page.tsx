@@ -1,6 +1,7 @@
 'use client'
 import Header from '@/components/base/Layout/Header'
 import { Section1 } from '@/components/module/home/Section1'
+import { Section2 } from '@/components/module/home/Section2'
 import { ThemeProvider } from '@mui/material'
 import { alpha, createTheme, getContrastRatio } from '@mui/material/styles'
 
@@ -23,6 +24,7 @@ export default function HomeNew() {
         <Header />
         <main>
           <Section1 />
+          <Section2 />
         </main>
       </ThemeProvider>
     </>
