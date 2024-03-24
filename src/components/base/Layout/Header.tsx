@@ -191,12 +191,12 @@ const Header = () => {
     <>
       <nav id="topnav" className={clsx('defaultscroll py-4 is-sticky', isScrolled ? 'nav-sticky' : '')}>
         <div className="max-w-7xl px-4 flex mx-auto justify-between">
-          <Link className="logo" href="/xyxy">
+          <Link className="logo" href="">
             <Logo />
           </Link>
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
-              <Link href="/xyxy">
+              <Link href="">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -207,7 +207,7 @@ const Header = () => {
                 </StyledButton>
               </Link>
 
-              <Link href="/xyxy/about-us">
+              <Link href="/about-us">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -230,7 +230,7 @@ const Header = () => {
               </Link>
               {/* <MenuWithDropdown label="Services" /> */}
 
-              <Link href="/xyxy/contact-us">
+              <Link href="/contact-us">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -277,11 +277,11 @@ const Header = () => {
         </AppBar>
         <List>
           <ListItemButton>
-            <Link href="/xyxy">HOME</Link>
+            <Link href="/">HOME</Link>
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/xyxy/about-us">ABOUT US</Link>
+            <Link href="/about-us">ABOUT US</Link>
           </ListItemButton>
           <Divider />
           <ListItemButton>
@@ -289,7 +289,7 @@ const Header = () => {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/xyxy/contact-us">CONTACT US</Link>
+            <Link href="/contact-us">CONTACT US</Link>
           </ListItemButton>
         </List>
       </Dialog>

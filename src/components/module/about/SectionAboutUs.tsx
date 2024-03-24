@@ -78,7 +78,7 @@ export const SectionAboutUs = () => {
                 <div className="bg-white z-2 top-0 left-0 absolute border border-gray-300 rounded-md p-2 w-fit">
                   <Image src="/images/image-about-docter.jpg" alt="About Aldino Medika" width={300} height={400} />
                 </div>
-                <div className="absolute z-1 after:content-[''] after:bg-white after:rounded-full after:w-64 after:flex after:mt-[30px] after:mx-auto after:h-64 w-80 h-80 top-[112px] left-[72px] bg-primary-lightGreen rounded-full"></div>
+                <div className="absolute z-1 after:content-[''] after:bg-white after:rounded-full after:w-64 after:flex after:mt-[30px] after:mx-auto after:h-64 w-80 h-80 top-[78px] left-[72px] bg-primary-lightGreen rounded-full"></div>
                 <div className="bg-white absolute transform translate-y-1/2 z-3 left-1/3 border border-gray-300 rounded-md p-2 w-fit">
                   <Image src="/images/image-about-stetos2.jpg" alt="About Aldino Medika" width={300} height={300} />
                 </div>
