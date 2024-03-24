@@ -3,7 +3,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 export const Section2 = () => {
   return (
     <section className="relative py-24 mx-auto w-full h-auto bg-white">
-      <h1 className="text-primary-dark-yellow  text-center text-lg lg:text-3xl font-bold">
+      <h1 className="text-primary-dark-yellow  text-center text-lg lg:text-3xl font-bold mx-4">
         Integrated Occupational Based Medical Healthcare and Services
       </h1>
       <div className="container grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-24 gap-[30px]">
