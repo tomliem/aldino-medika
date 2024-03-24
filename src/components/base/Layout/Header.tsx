@@ -197,20 +197,46 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
               <Link href="/xyxy">
-                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                <StyledButton
+                  className="text-white bg-transparent hover:bg-primary-lightGreen"
+                  disableElevation
+                  variant="contained"
+                  color="aldinoGreen"
+                >
                   HOME
                 </StyledButton>
               </Link>
 
               <Link href="/xyxy/about-us">
-                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                <StyledButton
+                  className="text-white bg-transparent hover:bg-primary-lightGreen"
+                  disableElevation
+                  variant="contained"
+                  color="aldinoGreen"
+                >
                   ABOUT US
                 </StyledButton>
               </Link>
-              <MenuWithDropdown label="Services" />
+
+              <Link href="#">
+                <StyledButton
+                  className="text-white bg-transparent hover:bg-primary-lightGreen"
+                  disableElevation
+                  variant="contained"
+                  color="aldinoGreen"
+                >
+                  SERVICES
+                </StyledButton>
+              </Link>
+              {/* <MenuWithDropdown label="Services" /> */}
 
               <Link href="/xyxy/contact-us">
-                <StyledButton className="text-white" disableElevation variant="contained" color="aldinoGreen">
+                <StyledButton
+                  className="text-white bg-transparent hover:bg-primary-lightGreen"
+                  disableElevation
+                  variant="contained"
+                  color="aldinoGreen"
+                >
                   CONTACT US
                 </StyledButton>
               </Link>
@@ -259,10 +285,7 @@ const Header = () => {
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/">SERVICES 1</Link>
-          </ListItemButton>
-          <ListItemButton>
-            <Link href="/">SERVICES 2</Link>
+            <Link href="/">SERVICES</Link>
           </ListItemButton>
           <Divider />
           <ListItemButton>

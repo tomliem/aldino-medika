@@ -1,5 +1,5 @@
 export const phone = {
-  csOne: '6285176687991',
+  csOne: '6285186687991',
 }
 
 export const waUrl = {
