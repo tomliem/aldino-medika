@@ -29,7 +29,7 @@ export default function HomeNew() {
             <div className="relative container">
               <div className="grid grid-cols-1 text-center mt-10">
                 <h3 className="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">
-                  Contact Us
+                  Services
                 </h3>
               </div>
             </div>
