@@ -25,7 +25,6 @@ import FileCopyIcon from '@mui/icons-material/FileCopy'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Logo } from '@/components/base/Logo/Logo'
 import clsx from 'clsx'
-import Link from 'next/link'
 import { useWindowScroll } from 'react-use'
 import { Avatar } from '@mui/material'
 import Slide from '@mui/material/Slide'
@@ -191,12 +190,12 @@ const Header = () => {
     <>
       <nav id="topnav" className={clsx('defaultscroll py-4 is-sticky', isScrolled ? 'nav-sticky' : '')}>
         <div className="max-w-7xl px-4 flex mx-auto justify-between">
-          <Link className="logo" href="">
+          <a className="logo" href="">
             <Logo />
-          </Link>
+          </a>
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center">
-              <Link href="">
+              <a href="">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -205,9 +204,9 @@ const Header = () => {
                 >
                   HOME
                 </StyledButton>
-              </Link>
+              </a>
 
-              <Link href="/about-us">
+              <a href="/about-us">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -216,9 +215,9 @@ const Header = () => {
                 >
                   ABOUT US
                 </StyledButton>
-              </Link>
+              </a>
 
-              <Link href="/services">
+              <a href="/services">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -227,10 +226,10 @@ const Header = () => {
                 >
                   SERVICES
                 </StyledButton>
-              </Link>
+              </a>
               {/* <MenuWithDropdown label="Services" /> */}
 
-              <Link href="/contact-us">
+              <a href="/contact-us">
                 <StyledButton
                   className="text-white bg-transparent hover:bg-primary-lightGreen"
                   disableElevation
@@ -239,7 +238,7 @@ const Header = () => {
                 >
                   CONTACT US
                 </StyledButton>
-              </Link>
+              </a>
             </div>
             {/* <div className="bg-white rounded-full hidden lg:flex">
               <StyledSearch placeholder="Search..." variant="outlined" size="small" />
@@ -277,19 +276,19 @@ const Header = () => {
         </AppBar>
         <List>
           <ListItemButton>
-            <Link href="/">HOME</Link>
+            <a href="/">HOME</a>
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/about-us">ABOUT US</Link>
+            <a href="/about-us">ABOUT US</a>
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/services">SERVICES</Link>
+            <a href="/services">SERVICES</a>
           </ListItemButton>
           <Divider />
           <ListItemButton>
-            <Link href="/contact-us">CONTACT US</Link>
+            <a href="/contact-us">CONTACT US</a>
           </ListItemButton>
         </List>
       </Dialog>
