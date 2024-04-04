@@ -39,8 +39,11 @@ export const SectionAboutUs = () => {
       <section className="bg-white">
         <div className="container">
           <h1 className="text-lg lg:text-3xl text-center pt-8 font-bold lg:font-semibold text-primary-green">
-            <span>We are the first and largest Occupational Integrated Based</span>
-            <span>at Strategic Location in Cikarang Area with 13.000 m2</span>{' '}
+            <span>We are the first and largest integrated occupational health safety service provider</span>
+            <span>
+              located in the heart of strategic location within Cikarang Area on 13.000 m2 area to be developed to
+              provide the best one stop service solution to the society.
+            </span>{' '}
           </h1>
           <h5 className="pb-6 text-sm lg:text-base text-center font-semibold">
             (In between Jababeka Industrial Area and Lippo Cikarang Industrial Area with over 2.215 factories from 25
@@ -53,23 +56,24 @@ export const SectionAboutUs = () => {
               </div>
 
               <div className="col-span-12">
-                <span className="text-primary-green font-semibold">Aldino Medika</span> pioneers integrated occupational
-                healthcare services, revolutionazing workplace wellness with innovative solutions. Our focus is on
-                transforming occupational health practices, ensuring employee well-being, and enhancing productivity.
+                <span className="text-primary-green font-semibold">Aldino Medika Indonesia</span> pioneers integrated
+                occupational healthcare services, revolutionazing workplace wellness with innovative solutions. Our
+                focus is on transforming occupational health practices, ensuring employee well-being, and enhancing
+                productivity.
               </div>
 
               <div className="col-span-12 text-right mt-12">
                 <div className="text-primary-green font-semibold">Our Vision</div>
                 <p>
-                  Menjadi pusat layanan kesehatan dan keselamatan kerja yang lengkap, terintegrasi, dan profesional
-                  dengan standar terbaik.
+                  To become a comprehensive integrated, and professional center for health and occupational safety
+                  services with the highest standards.
                 </p>
               </div>
               <div className="col-span-12 text-right mt-6">
                 <div className="text-primary-green font-semibold">Our Mission</div>
                 <p>
-                  Memberikan layanan kesehatan dan keselamatan kerja yang lengkap dengan profesionalisme dan standar
-                  terbaik.
+                  To provide complete health and occupational safety services with professionalism and the highest
+                  standards.
                 </p>
               </div>
             </div>
