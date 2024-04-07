@@ -5,6 +5,7 @@ import { Section2 } from '@/components/module/home/Section2'
 import { ThemeProvider } from '@mui/material'
 import { alpha, createTheme, getContrastRatio } from '@mui/material/styles'
 import Link from 'next/link'
+import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const violetBase = '#31ddd1'
 const violetMain = alpha(violetBase, 0.7)
@@ -19,6 +20,8 @@ const theme = createTheme({
   },
 })
 export default function HomeNew() {
+  const params = useSearchParams()
+  const defaultTab = params.get('tab')
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -48,7 +51,7 @@ export default function HomeNew() {
               </ul>
             </div>
           </section>
-          <Section2 />
+          <Section2 defaultTab={defaultTab ? Number(defaultTab) : 0} />
         </main>
         <Footer />
       </ThemeProvider>

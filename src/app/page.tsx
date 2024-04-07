@@ -25,7 +25,7 @@ export default function HomeNew() {
         <Header />
         <main>
           <Section1 />
-          <Section2 />
+          <Section2 shouldUseLink />
         </main>
         <Footer />
       </ThemeProvider>
