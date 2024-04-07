@@ -8,8 +8,9 @@ export const Section1 = () => {
       <div className="container z-1">
         <div className="grid grid-cols-1 mx-10 mt-10 relative">
           <h4 className="flex flex-col text-left lg:leading-normal leading-normal text-2xl lg:text-5xl font-bold text-white">
-            <span>Your Partner in Employee</span>
-            <span>Wellbeing and Occupational Health</span>
+            <span>Mitra Terbaik untuk</span>
+            <span>Kesejahteraan Karyawan dalam</span>
+            <span>Kesehatan dan Keselamatan Kerja</span>
           </h4>
           <p className="text-white text-sm lg:text-lg">
             <span
@@ -24,10 +25,13 @@ export const Section1 = () => {
             >
               ALDINO MEDIKA
             </span>
-            , we're committed to keeping your workforce healthy and safe.
+            , kami berkomitmen untuk menjaga kesehatan dan keselamatan tenaga kerja Anda.
           </p>
           <p className="text-white text-sm lg:text-lg">
-            From check-ups to safety measures, we ensure your workplace promotes wellness and prevents injuries.
+            Mulai dari pemeriksaan kesehatan rutin hingga langkah-langkah keselamatan,
+          </p>
+          <p className="text-white text-sm lg:text-lg">
+            kami memastikan tempat kerja anda akan mengutamakan kesejahteraan dan mencegah kecelakaan.
           </p>
           <a
             href={waUrl.csOne}

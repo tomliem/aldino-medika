@@ -47,7 +47,7 @@ export const SectionContactUs = () => {
               <div className="grid md:grid-cols-12 md:gap-6">
                 <div className="md:col-span-6 mb-5">
                   <label htmlFor="name" className="font-semibold">
-                    Your Name:
+                    Nama:
                   </label>
                   <input
                     name="name"
@@ -60,7 +60,7 @@ export const SectionContactUs = () => {
 
                 <div className="md:col-span-6 mb-5">
                   <label htmlFor="email" className="font-semibold">
-                    Your Email:
+                    Email:
                   </label>
                   <input
                     name="email"
@@ -75,7 +75,7 @@ export const SectionContactUs = () => {
               <div className="grid grid-cols-1">
                 <div className="col-span-1 flex flex-col mb-5">
                   <label htmlFor="subject" className="font-semibold">
-                    Your Question:
+                    Subjek Pertanyaan:
                   </label>
                   <input
                     name="subject"
@@ -88,7 +88,7 @@ export const SectionContactUs = () => {
               <div className="grid grid-col-1">
                 <div className="col-span-1 flex flex-col mb-5">
                   <label htmlFor="comments" className="font-semibold">
-                    Your Comment:
+                    Keterangan:
                   </label>
                   <textarea
                     name="comments"
@@ -104,13 +104,13 @@ export const SectionContactUs = () => {
                 name="send"
                 className="btn bg-emerald-600 hover:bg-emerald-700 text-white rounded-md"
               >
-                Send Message
+                Kirim Pesan
               </button>
             </form>
           </div>
 
           <div className="mx-auto mt-6">
-            <div className="font-bold text-center">Or</div>
+            <div className="font-bold text-center">Atau</div>
             <a
               href={waUrl.csOne}
               className="mx-auto mt-8 lg:mt-4 px-2 py-1 bg-gray-200 hover:bg-gray-300 transition-all rounded-lg cursor-pointer w-fit flex items-center font-semibold"
@@ -130,9 +130,7 @@ export const SectionContactUs = () => {
 
               <div className="content mt-7">
                 <h5 className="title h5 text-lg font-semibold">Phone</h5>
-                <p className="text-slate-400 mt-3">
-                  The phrasal sequence of the is now so that many campaign and benefit
-                </p>
+                <p className="text-slate-400 mt-3">Hubungi kami sekarang untuk solusi K3 terbaik!</p>
 
                 <div className="mt-5">
                   <a
@@ -154,9 +152,7 @@ export const SectionContactUs = () => {
 
               <div className="content mt-7">
                 <h5 className="title h5 text-lg font-semibold">Email</h5>
-                <p className="text-slate-400 mt-3">
-                  The phrasal sequence of the is now so that many campaign and benefit
-                </p>
+                <p className="text-slate-400 mt-3">Customer relation kami siap membantu Anda segera.</p>
 
                 <div className="mt-5">
                   <a

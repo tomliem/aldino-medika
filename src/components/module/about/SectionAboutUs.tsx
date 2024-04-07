@@ -2,6 +2,72 @@ import { menuKey } from '@/constants/menus'
 import Image from 'next/image'
 import Link from 'next/link'
 
+const MobileContent = () => {
+  return (
+    <div className="grid grid-cols-12 lg:hidden gap-6">
+      <div className="bg-white z-2 mx-auto border border-gray-300 rounded-md p-2 w-fit col-span-12">
+        <Image src="/images/image-about-docter.jpg" alt="About Aldino Medika" width={300} height={400} />
+      </div>
+
+      <div className="col-span-12">
+        <span className="text-primary-green font-semibold">Aldino Medika Indonesia</span> memimpin dalam layanan
+        kesehatan dan keselamatan kerja yang terintegrasi, merevolusi kesejahteraan tempat kerja dengan solusi inovatif.
+        Fokus kami adalah mengubah praktik kesehatan kerja, memastikan kesejahteraan karyawan, dan meningkatkan
+        produktivitas.
+      </div>
+
+      <div className="col-span-12 text-right mt-12">
+        <div className="text-primary-green font-semibold">Visi</div>
+        <p>
+          Menjadi Pusat Layanan Kesehatan dan Keselamatan Kerja yang Lengkap, Terintegrasi dan Professional dengan
+          Standar Terbaik.
+        </p>
+      </div>
+      <div className="col-span-12 text-right mt-6">
+        <div className="text-primary-green font-semibold">Misi</div>
+        <p>
+          Memberikan Layanan Kesehatan dan Keselamatan Kerja yang Lengkap dengan Profesionalisme dan Standar Terbaik.
+        </p>
+      </div>
+    </div>
+  )
+}
+const DesktopContent = () => {
+  return (
+    <div className="hidden lg:grid grid-cols-2">
+      <div className="relative h-full">
+        <div className="bg-white z-2 top-0 left-0 absolute border border-gray-300 rounded-md p-2 w-fit">
+          <Image src="/images/image-about-docter.jpg" alt="About Aldino Medika" width={300} height={400} />
+        </div>
+        <div className="absolute z-1 after:content-[''] after:bg-white after:rounded-full after:w-64 after:flex after:mt-[30px] after:mx-auto after:h-64 w-80 h-80 top-[78px] left-[72px] bg-primary-lightGreen rounded-full"></div>
+        <div className="bg-white absolute transform translate-y-1/2 z-3 left-1/3 border border-gray-300 rounded-md p-2 w-fit">
+          <Image src="/images/image-about-stetos2.jpg" alt="About Aldino Medika" width={300} height={300} />
+        </div>
+      </div>
+      <div className="relative text-lg">
+        <div>
+          <span className="text-primary-green font-semibold">Aldino Medika</span> memimpin dalam layanan kesehatan dan
+          keselamatan kerja yang terintegrasi, merevolusi kesejahteraan tempat kerja dengan solusi inovatif. Fokus kami
+          adalah mengubah praktik kesehatan kerja, memastikan kesejahteraan karyawan, dan meningkatkan produktivitas.
+        </div>
+
+        <div className="text-right mt-24">
+          <div className="text-primary-green font-semibold">Our Vision</div>
+          <p>
+            Menjadi pusat layanan kesehatan dan keselamatan kerja yang lengkap, terintegrasi, dan profesional dengan
+            standar terbaik.
+          </p>
+        </div>
+        <div className="text-right mt-12">
+          <div className="text-primary-green font-semibold">Our Mission</div>
+          <p>
+            Memberikan layanan kesehatan dan keselamatan kerja yang lengkap dengan profesionalisme dan standar terbaik.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
 export const SectionAboutUs = () => {
   return (
     <>
@@ -39,78 +105,16 @@ export const SectionAboutUs = () => {
       <section className="bg-white">
         <div className="container">
           <h1 className="text-lg lg:text-3xl text-center pt-8 font-bold lg:font-semibold text-primary-green">
-            <span>We are the first and largest integrated occupational health safety service provider</span>
-            <span>
-              located in the heart of strategic location within Cikarang Area on 13.000 m2 area to be developed to
-              provide the best one stop service solution to the society.
-            </span>{' '}
+            <span>Kami adalah yang pertama dan terbesar dalam Layanan Kesehatan dan Keselamatan Kerja</span>
+            <span>di Lokasi Strategis di Kawasan Cikaran dengan luas 13.000 m2.</span>
           </h1>
           <h5 className="pb-6 text-sm lg:text-base text-center font-semibold">
-            (In between Jababeka Industrial Area and Lippo Cikarang Industrial Area with over 2.215 factories from 25
-            different countries)
+            (berdiri di Kawasan Industri Jababeka dan Kawasan Industri Lippo Cikarang dengan lebih dari 2.125 pabrik
+            dari 25 negara berbeda)
           </h5>
           <div className="h-auto pb-24 lg:h-[720px] w-full mt-8 lg:mt-16">
-            <div className="grid grid-cols-12 lg:hidden gap-6">
-              <div className="bg-white z-2 mx-auto border border-gray-300 rounded-md p-2 w-fit col-span-12">
-                <Image src="/images/image-about-docter.jpg" alt="About Aldino Medika" width={300} height={400} />
-              </div>
-
-              <div className="col-span-12">
-                <span className="text-primary-green font-semibold">Aldino Medika Indonesia</span> pioneers integrated
-                occupational healthcare services, revolutionazing workplace wellness with innovative solutions. Our
-                focus is on transforming occupational health practices, ensuring employee well-being, and enhancing
-                productivity.
-              </div>
-
-              <div className="col-span-12 text-right mt-12">
-                <div className="text-primary-green font-semibold">Our Vision</div>
-                <p>
-                  To become a comprehensive integrated, and professional center for health and occupational safety
-                  services with the highest standards.
-                </p>
-              </div>
-              <div className="col-span-12 text-right mt-6">
-                <div className="text-primary-green font-semibold">Our Mission</div>
-                <p>
-                  To provide complete health and occupational safety services with professionalism and the highest
-                  standards.
-                </p>
-              </div>
-            </div>
-            <div className="hidden lg:grid grid-cols-2">
-              <div className="relative h-full">
-                <div className="bg-white z-2 top-0 left-0 absolute border border-gray-300 rounded-md p-2 w-fit">
-                  <Image src="/images/image-about-docter.jpg" alt="About Aldino Medika" width={300} height={400} />
-                </div>
-                <div className="absolute z-1 after:content-[''] after:bg-white after:rounded-full after:w-64 after:flex after:mt-[30px] after:mx-auto after:h-64 w-80 h-80 top-[78px] left-[72px] bg-primary-lightGreen rounded-full"></div>
-                <div className="bg-white absolute transform translate-y-1/2 z-3 left-1/3 border border-gray-300 rounded-md p-2 w-fit">
-                  <Image src="/images/image-about-stetos2.jpg" alt="About Aldino Medika" width={300} height={300} />
-                </div>
-              </div>
-              <div className="relative text-lg">
-                <div>
-                  <span className="text-primary-green font-semibold">Aldino Medika</span> pioneers integrated
-                  occupational healthcare services, revolutionazing workplace wellness with innovative solutions. Our
-                  focus is on transforming occupational health practices, ensuring employee well-being, and enhancing
-                  productivity.
-                </div>
-
-                <div className="text-right mt-24">
-                  <div className="text-primary-green font-semibold">Our Vision</div>
-                  <p>
-                    Menjadi pusat layanan kesehatan dan keselamatan kerja yang lengkap, terintegrasi, dan profesional
-                    dengan standar terbaik.
-                  </p>
-                </div>
-                <div className="text-right mt-12">
-                  <div className="text-primary-green font-semibold">Our Mission</div>
-                  <p>
-                    Memberikan layanan kesehatan dan keselamatan kerja yang lengkap dengan profesionalisme dan standar
-                    terbaik.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <MobileContent />
+            <DesktopContent />
           </div>
         </div>
       </section>
