@@ -88,6 +88,7 @@ const description = [
   'Menyediakan konsultasi dan bantuan terkait manajemen sistem, pusat pengendalian alarm, sertifikasi, evakuasi medis (Medevac), administrasi dan pengelolaan kesehatan tenaga kerja (ASO), dan lain-lain.',
   'Menyelenggarakan pelatihan di Training Center K3 (Kesehatan dan Keselamatan Kerja) dan keterampilan kerja sesuai dengan standar Kementerian Ketenagakerjaan RI< Badan Nasional Sertifikasi Profesi (BNSP), standar internal Aldino, serta standar industri khusus.',
 ]
+
 export const Section2 = ({
   defaultTab = 0,
   shouldUseLink = false,
@@ -97,12 +98,10 @@ export const Section2 = ({
 }) => {
   const router = useRouter()
   const [activeTab, setActiveTab] = useState(defaultTab)
-  return (
-    <section className="relative py-24 mx-auto w-full h-auto bg-white">
-      <h1 className="text-primary-dark-yellow text-center text-lg lg:text-3xl font-bold mx-4">
-        Pusat Layanan Kesehatan dan Keselamatan Kerja (K3) yang terintegrasi
-      </h1>
-      <div className="container hidden sm:grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-24 gap-[30px]">
+
+  const renderDesktop = () => {
+    return (
+      <div className="container hidden lg:grid lg:grid-cols-5 mt-24 gap-[30px]">
         <IconCard
           tabIdx={0}
           isActive={activeTab === 0 && !shouldUseLink}
@@ -110,13 +109,18 @@ export const Section2 = ({
           srcGreen="/icons/clinic-green.png"
           srcWhite="/icons/clinic-white.png"
           title={
-            <>
+            <div>
               OHS Center <br />
               <span className="opacity-0 invisible text-transparent">a</span>
-            </>
+              {!shouldUseLink && activeTab === 0 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
           }
           onClick={() => {
-            setActiveTab(0)
+            setActiveTab((prev) => (prev !== 0 ? 0 : -1))
             router.push(`/services?tab=0`, {
               scroll: false,
             })
@@ -129,12 +133,17 @@ export const Section2 = ({
           srcGreen="/icons/location-green.png"
           srcWhite="/icons/location-white.png"
           title={
-            <>
+            <div>
               OHS Coorporate <br /> On Site
-            </>
+              {!shouldUseLink && activeTab === 1 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
           }
           onClick={() => {
-            setActiveTab(1)
+            setActiveTab((prev) => (prev !== 1 ? 1 : -1))
             router.push(`/services?tab=1`, {
               scroll: false,
             })
@@ -146,9 +155,19 @@ export const Section2 = ({
           shouldUseLink={shouldUseLink}
           srcGreen="/icons/drugs-green.png"
           srcWhite="/icons/drugs-white.png"
-          title="OHS Drugs & Supplies"
+          title={
+            <>
+              OHS Drugs & Supplies
+              <br />
+              {!shouldUseLink && activeTab === 2 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </>
+          }
           onClick={() => {
-            setActiveTab(2)
+            setActiveTab((prev) => (prev !== 2 ? 2 : -1))
             router.push(`/services?tab=2`, {
               scroll: false,
             })
@@ -163,10 +182,15 @@ export const Section2 = ({
           title={
             <>
               OHS Consultant & <br /> Assistant
+              {!shouldUseLink && activeTab === 3 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
             </>
           }
           onClick={() => {
-            setActiveTab(3)
+            setActiveTab((prev) => (prev !== 3 ? 3 : -1))
             router.push(`/services?tab=3`, {
               scroll: false,
             })
@@ -179,18 +203,161 @@ export const Section2 = ({
           srcGreen="/icons/presentation-green.png"
           srcWhite="/icons/presentation-white.png"
           title={
-            <>
+            <div>
               OHS Training & <br /> Human Capital
-            </>
+              {!shouldUseLink && activeTab === 4 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
           }
           onClick={() => {
-            setActiveTab(4)
+            setActiveTab((prev) => (prev !== 4 ? 4 : -1))
             router.push(`/services?tab=4`, {
               scroll: false,
             })
           }}
         />
       </div>
+    )
+  }
+  const renderTablet = () => {
+    return (
+      <div className="container hidden md:grid lg:hidden grid-cols-2 mt-24 gap-[16px]">
+        <IconCard
+          tabIdx={0}
+          isActive={activeTab === 0 && !shouldUseLink}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/clinic-green.png"
+          srcWhite="/icons/clinic-white.png"
+          title={
+            <div>
+              OHS Center <br />
+              <span className="opacity-0 invisible text-transparent">a</span>
+              {!shouldUseLink && activeTab === 0 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab((prev) => (prev !== 0 ? 0 : -1))
+            router.push(`/services?tab=0`, {
+              scroll: false,
+            })
+          }}
+        />
+        <IconCard
+          tabIdx={1}
+          isActive={activeTab === 1}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/location-green.png"
+          srcWhite="/icons/location-white.png"
+          title={
+            <div>
+              OHS Coorporate <br /> On Site
+              {!shouldUseLink && activeTab === 1 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab((prev) => (prev !== 1 ? 1 : -1))
+            router.push(`/services?tab=1`, {
+              scroll: false,
+            })
+          }}
+        />
+        <IconCard
+          tabIdx={2}
+          isActive={activeTab === 2}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/drugs-green.png"
+          srcWhite="/icons/drugs-white.png"
+          title={
+            <>
+              OHS Drugs & Supplies
+              <br />
+              {!shouldUseLink && activeTab === 2 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </>
+          }
+          onClick={() => {
+            setActiveTab((prev) => (prev !== 2 ? 2 : -1))
+            router.push(`/services?tab=2`, {
+              scroll: false,
+            })
+          }}
+        />
+        <IconCard
+          tabIdx={3}
+          isActive={activeTab === 3}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/medical-green.png"
+          srcWhite="/icons/medical-white.png"
+          title={
+            <>
+              OHS Consultant & <br /> Assistant
+              {!shouldUseLink && activeTab === 3 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </>
+          }
+          onClick={() => {
+            setActiveTab((prev) => (prev !== 3 ? 3 : -1))
+            router.push(`/services?tab=3`, {
+              scroll: false,
+            })
+          }}
+        />
+        <IconCard
+          tabIdx={4}
+          isActive={activeTab === 4}
+          shouldUseLink={shouldUseLink}
+          srcGreen="/icons/presentation-green.png"
+          srcWhite="/icons/presentation-white.png"
+          useMobile
+          title={
+            <div>
+              OHS Training & <br /> Human Capital
+              {!shouldUseLink && activeTab === 4 && (
+                <div className="container block lg:hidden">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab((prev) => (prev !== 4 ? 4 : -1))
+            router.push(`/services?tab=4`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
+    )
+  }
+  return (
+    <section className="relative py-24 mx-auto w-full h-auto bg-white">
+      <h1 className="text-primary-dark-yellow text-center text-lg lg:text-3xl font-bold mx-4">
+        Pusat Layanan Kesehatan dan Keselamatan Kerja (K3) yang terintegrasi
+      </h1>
+      {renderDesktop()}
+      {renderTablet()}
+
       <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
         <IconCard
           tabIdx={0}
@@ -324,7 +491,7 @@ export const Section2 = ({
         />
       </div>
       {!shouldUseLink && (
-        <div className="container hidden sm:relative">
+        <div className="container hidden md:block">
           <p className="px-6 w-fit mt-[70px] py-8 rounded-lg bg-emerald-600/5">{description[activeTab]}</p>
         </div>
       )}

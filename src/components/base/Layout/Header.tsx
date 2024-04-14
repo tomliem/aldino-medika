@@ -264,7 +264,7 @@ const Header = () => {
         onClose={() => setOpenMobileMenu(false)}
         TransitionComponent={Transition}
       >
-        <AppBar sx={{ position: 'relative' }}>
+        <AppBar sx={{ position: 'relative', backgroundColor: '#207990' }}>
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={() => setOpenMobileMenu(false)} aria-label="close">
               <CloseIcon />
