@@ -13,6 +13,7 @@ const IconCard = ({
   description = '',
   onClick,
   tabIdx,
+  useMobile,
   shouldUseLink = false,
 }: {
   srcGreen: string
@@ -20,6 +21,7 @@ const IconCard = ({
   title: string | ReactElement
   description?: string
   isActive?: boolean
+  useMobile?: boolean
   onClick: () => void
   tabIdx: number
   shouldUseLink?: boolean
@@ -29,7 +31,7 @@ const IconCard = ({
       className={clsx(
         'transform group px-3 py-10 rounded-full shadow hover:shadow-emerald-600/10 text-center hover:bg-emerald-600/5 transition duration-500',
         {
-          ['translate-y-1/2 shadow-emerald-600/10 bg-emerald-600/5']: isActive,
+          ['translate-y-1/4 shadow-emerald-600/10 bg-emerald-600/5']: isActive && !useMobile,
           ['bg-white']: !isActive,
         }
       )}
@@ -97,10 +99,10 @@ export const Section2 = ({
   const [activeTab, setActiveTab] = useState(defaultTab)
   return (
     <section className="relative py-24 mx-auto w-full h-auto bg-white">
-      <h1 className="text-primary-dark-yellow  text-center text-lg lg:text-3xl font-bold mx-4">
-        Pusat Layana Kesehatan dan Keselamatan Kerja (K3) yang terintegrasi
+      <h1 className="text-primary-dark-yellow text-center text-lg lg:text-3xl font-bold mx-4">
+        Pusat Layanan Kesehatan dan Keselamatan Kerja (K3) yang terintegrasi
       </h1>
-      <div className="container grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-24 gap-[30px]">
+      <div className="container hidden sm:grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-24 gap-[30px]">
         <IconCard
           tabIdx={0}
           isActive={activeTab === 0 && !shouldUseLink}
@@ -189,9 +191,141 @@ export const Section2 = ({
           }}
         />
       </div>
+      <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
+        <IconCard
+          tabIdx={0}
+          isActive={activeTab === 0 && !shouldUseLink}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/clinic-green.png"
+          srcWhite="/icons/clinic-white.png"
+          title={
+            <div>
+              OHS Center <br />
+              <span className="opacity-0 invisible text-transparent">a</span>
+              {!shouldUseLink && activeTab === 0 && (
+                <div className="container">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab(0)
+            router.push(`/services?tab=0`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
+      <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
+        <IconCard
+          tabIdx={1}
+          isActive={activeTab === 1}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/location-green.png"
+          srcWhite="/icons/location-white.png"
+          title={
+            <div>
+              OHS Coorporate <br /> On Site
+              {!shouldUseLink && activeTab === 1 && (
+                <div className="container">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab(1)
+            router.push(`/services?tab=1`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
+      <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
+        <IconCard
+          tabIdx={2}
+          isActive={activeTab === 2}
+          shouldUseLink={shouldUseLink}
+          srcGreen="/icons/drugs-green.png"
+          srcWhite="/icons/drugs-white.png"
+          useMobile
+          title={
+            <>
+              OHS Drugs & Supplies
+              <br />
+              {!shouldUseLink && activeTab === 2 && (
+                <div className="container">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </>
+          }
+          onClick={() => {
+            setActiveTab(2)
+            router.push(`/services?tab=2`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
+      <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
+        <IconCard
+          tabIdx={3}
+          isActive={activeTab === 3}
+          shouldUseLink={shouldUseLink}
+          srcGreen="/icons/medical-green.png"
+          srcWhite="/icons/medical-white.png"
+          useMobile
+          title={
+            <>
+              OHS Consultant & <br /> Assistant
+              {!shouldUseLink && activeTab === 3 && (
+                <div className="container">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </>
+          }
+          onClick={() => {
+            setActiveTab(3)
+            router.push(`/services?tab=3`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
+      <div className="container grid sm:hidden grid-cols-1 gap-[30px] mt-12">
+        <IconCard
+          tabIdx={4}
+          isActive={activeTab === 4}
+          shouldUseLink={shouldUseLink}
+          useMobile
+          srcGreen="/icons/presentation-green.png"
+          srcWhite="/icons/presentation-white.png"
+          title={
+            <div>
+              OHS Training & <br /> Human Capital
+              {!shouldUseLink && activeTab === 4 && (
+                <div className="container">
+                  <p className="px-2 w-fit font-normal py-4 rounded-lg">{description[activeTab]}</p>
+                </div>
+              )}
+            </div>
+          }
+          onClick={() => {
+            setActiveTab(4)
+            router.push(`/services?tab=4`, {
+              scroll: false,
+            })
+          }}
+        />
+      </div>
       {!shouldUseLink && (
-        <div className="container">
-          <p className="px-6 w-fit mt-32 py-8 rounded-lg bg-emerald-600/5">{description[activeTab]}</p>
+        <div className="container hidden sm:relative">
+          <p className="px-6 w-fit mt-[70px] py-8 rounded-lg bg-emerald-600/5">{description[activeTab]}</p>
         </div>
       )}
     </section>
