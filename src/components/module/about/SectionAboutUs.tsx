@@ -106,7 +106,7 @@ export const SectionAboutUs = () => {
         <div className="container">
           <h1 className="text-lg lg:text-3xl text-center pt-8 font-bold lg:font-semibold text-primary-green">
             <span>Kami adalah yang pertama dan terbesar dalam Layanan Kesehatan dan Keselamatan Kerja</span>
-            <span>di Lokasi Strategis di Kawasan Cikaran dengan luas 13.000 m2.</span>
+            <span>di Lokasi Strategis di Kawasan Cikarang dengan luas 13.000 m2.</span>
           </h1>
           <h5 className="pb-6 text-sm lg:text-base text-center font-semibold">
             (berdiri di Kawasan Industri Jababeka dan Kawasan Industri Lippo Cikarang dengan lebih dari 2.125 pabrik
